@@ -6,16 +6,11 @@ nav.nav-pills {
   width: 200px;
 }
 
-a {
-  text-decoration: none !important;
-}
 
-.row {
-  --bs-gutter-x: 1rem !important;
-}
+
 
 .btnEdit {
-  width: auto !important;
+  width: auto;
 }
 
 .btnOpen {
@@ -44,7 +39,7 @@ a {
 }
 
 .btn-sm {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .text_list {
@@ -65,8 +60,8 @@ svg.removeWorker {
 }
 
 .workerImg {
-  width: 63px !important;
-  height: 63px !important;
+  width: 63px;
+  height: 63px;
 }
 
 /* =============================Workers styles =================================== */
@@ -255,7 +250,7 @@ svg.removeWorker {
 }
 
 .black {
-  color: black !important;
+  color: black;
 }
 
 
@@ -281,27 +276,23 @@ svg.removeWorker {
 }
 
 .card-header {
-  background: whitesmoke !important;
-  border-bottom: none !important;
+  background: whitesmoke;
+  border-bottom: none ;
 }
 
 .card-title {
-  color: black !important;
-}
-
-.collapsed {
-  color: black !important;
+  color: black ;
 }
 
 .card-t {
-  border: 0.3px solid darkgrey !important;
+  border: 0.3px solid darkgrey;
   margin-bottom: 20px;
   border-radius: 4px;
 }
 
 .card {
-  background: transparent !important;
-  border: none !important;
+  background: transparent ;
+  border: none ;
 }
 
 svg {
@@ -309,13 +300,13 @@ svg {
 }
 
 .fa-align-justify {
-  color: darkgrey !important;
+  color: darkgrey;
   margin-left: 10px;
 
 }
 
 .delete {
-  color: red !important;
+  color: red;
   margin-right: 10px;
 }
 
@@ -336,7 +327,7 @@ ul {
 
 .inp_text {
   border: none;
-  width: 100% !important;
+  width: 100%;
   padding: 10px;
 
 }
@@ -346,19 +337,19 @@ ul {
 }
 
 .form-control {
-  width: 90% !important;
+  width: 90%;
 }
 
 .box_input {
   height: calc(2.25rem + 2px);
-  width: 90% !important;
+  width: 90%;
 
 }
 
 .enter_inp {
   left: 90%;
   position: absolute;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   margin-left: 8px;
 }
 
