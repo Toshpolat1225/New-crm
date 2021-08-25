@@ -14,9 +14,6 @@ window.addEventListener("load", function (e) {
 
   }
 
-  // ============================== price input multiplier ===========================
-
-
   AddWorkers();
   function AddWorkers() {
     const addWorker = document.querySelectorAll(".addWorker");
