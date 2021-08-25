@@ -116,11 +116,15 @@ window.addEventListener("load", function (e) {
   function getRealTime() {
     const logoDate = document.querySelector(".logoDate");
     const logoTime = document.querySelector(".logoTime");
+    const time = new Date()
+    const date = new Date()
+    logoDate.innerHTML = window.moment(date).format('YYYY-MM-DD')
+    logoTime.innerHTML = window.moment(time).format('HH:mm:ss')
     setInterval(() => {
       const time = new Date()
       const date = new Date()
       logoDate.innerHTML = window.moment(date).format('YYYY-MM-DD')
-      logoTime.innerHTML = window.moment(date).format('HH:mm:ss')
+      logoTime.innerHTML = window.moment(time).format('HH:mm:ss')
     }, 1000);
   }
 

@@ -259,11 +259,11 @@ svg.removeWorker {
 
 .card-header {
   background: whitesmoke;
-  border-bottom: none ;
+  border-bottom: none;
 }
 
 .card-title {
-  color: black ;
+  color: black;
 }
 
 .card-t {
@@ -273,8 +273,8 @@ svg.removeWorker {
 }
 
 .card {
-  background: transparent ;
-  border: none ;
+  background: transparent;
+  border: none;
 }
 
 svg {
@@ -405,6 +405,19 @@ ul {
   font-size: 18px;
 }
 
+/* new Front started */
+
 .customSelect {
   display: block;
+}
+
+.navbarNav {
+  align-items: center;
+}
+
+.navbarNav .navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15px !important;
 }
