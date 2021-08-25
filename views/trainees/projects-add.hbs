@@ -25,9 +25,9 @@
           </div>
           <div class="form-group">
             <label for="inputProjectLeader">Project Leader</label>
-            <select id="selectGroupR1" class="form-control select2" name="workers">
+            <select id="selectGroupR1" class="form-control select2" name="leader">
               {{#each workers}}
-              <option value="{{_id}}">{{fullname}}</option>
+              <option value="{{fullname}}" data-id="{{_id}}">{{fullname}}</option>
               {{/each}}
             </select>
           </div>
