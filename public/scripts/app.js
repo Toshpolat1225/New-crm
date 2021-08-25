@@ -99,7 +99,7 @@ window.addEventListener("load", function (e) {
       let { latitude, longitude } = succes.coords;
       fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`
-       )
+      )
         .then((res) => res.json())
         .then((data) => {
           const date = window
@@ -112,33 +112,17 @@ window.addEventListener("load", function (e) {
     });
   }
 
-
-
-
-
   getRealTime();
   function getRealTime() {
     const logoDate = document.querySelector(".logoDate");
     const logoTime = document.querySelector(".logoTime");
-    fetch("http://worldtimeapi.org/api/timezone/Asia/Tashkent")
-      .then((res) => res.json())
-      .then((data) => {
-        logoTime.innerHTML = window.moment(data.datetime).format("HH:mm:ss");
-        logoDate.innerHTML = window.moment(data.datetime).format("YYYY-MM-DD");
-      });
-
     setInterval(() => {
-      fetch("http://worldtimeapi.org/api/timezone/Asia/Tashkent")
-        .then((res) => res.json())
-        .then((data) => {
-          logoTime.innerHTML = window.moment(data.datetime).format("HH:mm:ss");
-          logoDate.innerHTML = window
-            .moment(data.datetime)
-            .format("YYYY-MM-DD");
-        });
+      const time = new Date()
+      const date = new Date()
+      logoDate.innerHTML = window.moment(date).format('YYYY-MM-DD')
+      logoTime.innerHTML = window.moment(date).format('HH:mm:ss')
     }, 1000);
   }
-
 
   //  ========================= price =======================================
 
@@ -150,7 +134,7 @@ window.addEventListener("load", function (e) {
 
 });
 
- 
+
 
 
 
