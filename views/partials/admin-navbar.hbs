@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
   <!-- Left navbar links -->
   <ul class="navbar-nav navbarNav">
     <li class="nav-item">
@@ -12,6 +12,21 @@
       <i class="far fa-clock" style="font-size: 22px; margin: 0 10px;"></i>
       <span style="font-size: 20px;" class="brand-text logoTime font-weight-light"></span>
     </li>
+  </ul>
+  <ul class="navbar-nav navbarNav">
+     <div class="user-panel d-flex">
+      <div class="image">
+        <img
+          src="/images/{{user.avatar}}"
+          id="admin_img"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
+      </div>
+      <div class="info">
+        <p  class="d-block mb-0   " id="admin_name">{{user.fullname}}</p>
+      </div>
+    </div>
   </ul>
 
   {{!--
