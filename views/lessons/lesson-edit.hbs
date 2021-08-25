@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-md-6 justify-content-center align-items-center">
+    <div class="card card-primary">
+      <form
+        action="/lesson/edit/{{lesson.id}}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="card-header">
+          <h3 class="card-title">Lesson</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name">Lesson name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              value="{{lesson.name}}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="img">Lesson img</label>
+            <div class="input-group">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="img"
+                  name="img"
+                />
+                <label
+                  class="custom-file-label"
+                  for="img"
+                >{{lesson.img}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="url">Lesson video URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="url"
+              name="url"
+              value="{{lesson.url}}"
+              required
+            />
+          </div>
+        </div>
+        <div class="card-footer">
+          <input type="hidden" name="libraryId" value="{{lesson.libraryId}}" />
+          <button type="submit" class="btn btn-success">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

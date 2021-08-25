@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="card card-primary">
+
+          <!-- form start -->
+          <form action="/lids/lidCategory/add" method="POST">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="name">Category name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Category name"
+                  name="name"
+                  value="{{category.name}}"
+                />
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{{> lids}}
+<section class="content">
+    <div class="card card-solid ">
+        <div class="card-body pb-0">
+
+            {{#if lidForms.length}}
+            <div class="row">
+                {{#each lidForms}}
+                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill">
+                        <div style="position: relative;" class="card-header text-muted border-bottom-0">
+                                <h2>{{categoryId.name}}</h2>
+                                {{#iftr @root.isadmin @root.ismanager}}
+                                <a style="position: absolute; right:10px; top:0" href="/lids/delete/{{id}}"><i class="fas fa-times"></i></a>
+                                {{/iftr}}
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="lead"><b>{{name}}</b></h2>
+                                    <p class="text-muted text-sm">{{comment}}</p>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="small"><a href="tel:{{num1}}"><span class="fa-li"><i
+                                                        class="fas fa-lg fa-phone"></i></span>{{num1}}</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <img src="https://www.radiantexpressionsdental.com/wp-content/uploads/2017/11/avatar-client-customer-account-male-man-person-user-profile-icon-512.png"
+                                        alt="user-avatar" class="img-circle img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            {{#iftr @root.isadmin @root.ismanager}}
+                            <div class="text-left ml-0">
+                                <a href="/lids/edit/{{id}}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user"></i> Edit Information
+                                </a>
+                            </div>
+                            {{/iftr}}
+                            <div class="text-right mr-0">
+                                <a href="/lids/{{id}}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user"></i> More Information
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <h4 style="margin-top: 30px;">Lids is empty</h4>
+            {{/if}}
+
+        </div>
+
+
+
+    </div>
+
+</section>

@@ -1,0 +1,134 @@
+<form action="/projects/edit/{{project.id}}" method="POST">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Project</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputName2">Project Name</label>
+            <input type="text" id="inputName2" class="form-control" name="name" value="{{project.name}}" required />
+          </div>
+          <div class="form-group">
+            <label for="inputDescription1">Project Description</label>
+            <textarea id="inputDescription1" class="form-control" rows="4" required
+              name="description">{{project.description}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputStatusZ">Status</label>
+            <select id="inputStatusZ" class="form-control custom-select" name="status">
+              <option value="{{project.status.status}}" selected="true">Default</option>
+              <option value="On progress">On progress</option>
+              <option value="Canceled">Canceled</option>
+              <option value="Success">Success</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputClientCompany">Client Company</label>
+            <input type="text" id="inputClientCompany" class="form-control" required name="company"
+              value="{{project.company}}" />
+          </div>
+          <div class="form-group">
+            <label for="inputProjectLeader">Project Leader</label>
+            <input type="text" id="inputProjectLeader" class="form-control" name="leader" value="{{project.leader}}"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="inputProjectDeadline">Project deadline</label>
+            <input type="date" id="inputProjectLeader" class="form-control" pattern="[0-9]{4}[0-9]{2}[0-9]{2}"
+              name="deadline" value="{{project.deadline}}" required />
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Client</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputName4">Client Name</label>
+            <input type="text" id="inputName4" class="form-control" name="clientName" value="{{project.clientName}}"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="inputName5">Client phone number</label>
+            <input type="number" id="inputName5" class="form-control" name="clientNumber"
+              value="{{project.clientNumber}}" required />
+          </div>
+          <div class="form-group">
+            <label for="inputName6">Client location</label>
+            <input type="text" id="inputName6" class="form-control" name="clientLocation"
+              value="{{project.clientLocation}}" required />
+          </div>
+          <div class="form-group">
+            <label for="inputTelegram">Telegram group</label>
+            <input type="text" id="inputTelegram" class="form-control" name="telegram" value="{{project.telegram}}"
+              required />
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Budget</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputEstimatedBudget7">Total payment</label>
+            <input type="number" id="inputEstimatedBudget7" class="form-control" name="totalPayment"
+              value="{{project.totalPayment}}" required />
+          </div>
+          <button type="button" class="btn btn-primary addWorker" id="addWorker">add worker</button>
+          <div class="cardBody">
+            {{#each project.works}}
+            {{#if worker.id}}
+            <div class="workerBlock">
+              <div class="form-group col-6">
+                <label for="selectGroupR">Minimal</label>
+                <select id="selectGroupR" class="form-control select2" name="workers" style="width: 100%;">
+                  <option value="{{worker.id}}" selected="true">{{worker.fullname}}</option>
+                  {{#each @root.workers}}
+                  <option value="{{id}}">{{fullname}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="form-group col-6">
+                <label for="inputEstimatedBudgetL">Worker payment</label>
+                <input type="number" id="inputEstimatedBudgetL" class="form-control" name="workerPayment"
+                  value="{{payment}}" required />
+              </div>
+              <div class="crossRow">
+                <p class="removeWorker"><svg class="removeWorker" stroke="currentColor" fill="currentColor"
+                    stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="removeWorker"
+                      d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z">
+                    </path>
+                  </svg></p>
+              </div>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 d-flex justify-content-center">
+      <input type="hidden" name="id" value="{{project.id}}" />
+      <input type="submit" value="Edit this project" class="btn btn-success float-right" />
+    </div>
+  </div>
+</form>

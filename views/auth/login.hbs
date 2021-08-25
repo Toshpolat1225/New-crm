@@ -1,0 +1,55 @@
+    <body class="hold-transition login-page">
+      
+  <div class="row d-flex justify-content-center">
+    <div class="col-6  d-flex  justify-content-center">
+      <div class="login-box">
+        {{#if loginError}}
+        <p class="errorAlert">{{loginError}}</p>
+        {{/if}}
+
+        <div class="card card-outline card-primary">
+          <div class="card-header text-center">
+            <a href="/" class="h1"><b>CHANGE IT</b></a>
+          </div>
+          <div class="card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form action="/auth/login" method="post">
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="login__button">
+                <button type="submit" class="btn-primary btn-app"
+                  style="padding: 10px 20px; height: unset; margin: 0; margin-bottom: 10px;">Sign in</button>
+              </div>
+            </form>
+
+
+
+
+            <p class="mb-0">
+              <a href="/auth/register" class="text-center">Register a new membership</a>
+            </p>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+
+  </div>
+  <!-- /.login-box -->
+    </body>

@@ -1,0 +1,143 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a class="brand-link">
+    <i class="far fa-calendar-alt" style="font-size: 22px; margin: 0 10px;"></i>
+    <span
+      style="font-size: 20px;"
+      class="brand-text logoDate font-weight-light"
+    ></span>
+  </a>
+  <a class="brand-link">
+    <i class="far fa-clock" style="font-size: 22px; margin: 0 10px;"></i>
+    <span
+      style="font-size: 20px;"
+      class="brand-text logoTime font-weight-light"
+    ></span>
+  </a>
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img
+          src="/images/{{user.avatar}}"
+          id="admin_img"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
+      </div>
+      <div class="info">
+        <a href="#" class="d-block" id="admin_name">{{user.fullname}}</a>
+      </div>
+    </div>
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+             <li class="nav-item">
+               <a href="/workers" class="nav-link">
+              <p>All staff</p>
+              </a>
+            </li>
+            {{#unless isstudent}}
+
+          {{#iftr isadmin ismanager}}
+            <li class="nav-item">
+              <a href="/price/addPrice/add" class="nav-link">
+                <p>Add price</p>
+              </a>
+            </li>
+            {{/iftr}}
+            <li class="nav-item">
+              <a href="/price" class="nav-link">
+                <p>View price</p>
+              </a>
+            </li>
+
+           {{#iftr isadmin ismanager}}
+      <li class="nav-item">
+          <a href="/lids" class="nav-link">
+            <p>
+              Lid
+            </p>
+          </a>
+        </li>
+            <li class="nav-item">
+              <a href="/salary/add" class="nav-link">
+                <p>Add salary</p>
+              </a>
+            </li>
+            {{/iftr}}
+            <li class="nav-item">
+              <a href="/salary" class="nav-link">
+                <p>Salary</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/salary/worker" class="nav-link">
+                <p>worker salary</p>
+              </a>
+            </li>
+            
+
+
+        <li class="nav-item">
+          <a href="/projects" class="nav-link">
+            <p>Projects</p>
+          </a>
+        </li>
+        {{#iftr isadmin ismanager}}
+        <li class="nav-item">
+          <a href="/projects/add" class="nav-link">
+            <p>Create project</p>
+          </a>
+        </li>
+        {{/iftr}}
+      
+        {{#if isadmin}}
+        <li class="nav-item">
+          <a href="/workers/add" class="nav-link">
+            <p>Add a new worker</p>
+          </a>
+        </li>
+        {{/if}}
+
+          {{#iftr isadmin ismanager}}
+        <li class="nav-item">
+          <a href="/library/add" class="nav-link">
+            <p>Create library</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/lesson/add" class="nav-link">
+            <p>Create lesson</p>
+          </a>
+        </li>
+        {{/iftr}}
+      
+         {{#iftr isadmin ismanager}}
+        <li class="nav-item">
+          <a href="/trainees/add" class="nav-link">
+            <p>Add trainees project</p>
+          </a>
+        </li>
+        {{/iftr}}
+        {{/unless}}
+          <li class="nav-item">
+          <a href="/trainees" class="nav-link">
+            <p>Trainees projects</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/library" class="nav-link">
+            <p>Library</p>
+          </a>
+        </li>
+         
+      
+      </ul>
+    </nav>
+  </div>
+</aside>

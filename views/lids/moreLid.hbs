@@ -1,0 +1,39 @@
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        {{#if lidForms}}
+        <div class="card-body row justify-content-between">
+            <div class="col-5 text-center d-flex align-items-center justify-content-center">
+                <div class="">
+                    <h2>{{lidForms.name}} <strong> {{lids.status}}</strong></h2> {{!-- --------------------------------------------------------------------------------------------------------------------- --}}
+                    <img src="https://www.radiantexpressionsdental.com/wp-content/uploads/2017/11/avatar-client-customer-account-male-man-person-user-profile-icon-512.png"
+                                        alt="user-avatar" class="img-circle img-fluid" style="width: 280px;">
+                    <h3 class="lead mb-5">{{lidForms.comment}}<br>
+                        <a href="tel:{{lidForms.num1}}">Phone: <strong>{{lidForms.num1}}</strong></a>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-5 d-flex flex-column justify-content-between">
+                <div class="form-group">
+                    <a href="tel:{{lidForms.num2}}"><h3>Phone: {{lidForms.num2}}</h3></a>
+                </div>
+                <div class="form-group">
+                    <h3>Found: {{lidForms.found}}</h3>
+                </div>
+                <div class="form-group">
+                    <h3>Cpmpany: {{lidForms.company}}</h3>
+                </div>
+                <div class="form-group">
+                    <h3>Date: {{lidForms.date}}</h3>
+                </div>
+                <div class="form-group">
+                    <h3>Note: {{lidForms.note}}</h3>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <h2>Not information</h2>
+        {{/if}}
+    </div>
+</section>

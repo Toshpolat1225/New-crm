@@ -1,0 +1,22 @@
+{{#if categories.length}}
+<div class="row justify-content-center mt-4">
+    {{#each categories}}
+    <div class="col-3 mt-3">
+        <div class="card">
+            <img src="/images/{{img}}" class="card-img-top" alt="{{name}}">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/library/{{id}}">{{name}}</a></h5>
+            </div>
+            {{#iftr @root.isadmin @root.ismanager}}
+            <div class="d-flex justify-content-around p-2">
+                <a class="btn btn-primary" href="/library/edit/{{id}}">Ozgartirish</a>
+                <a class="btn btn-primary" href="/library/delete/{{id}}">Ochirish</a>
+            </div>
+            {{/iftr}}
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <h2>library empty</h2>
+</div>
+{{/if}}

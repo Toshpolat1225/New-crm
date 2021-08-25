@@ -1,0 +1,134 @@
+
+
+
+/* Narxlar bo'limi  css */
+*{
+  list-style: none;
+  text-decoration: none;
+  
+}
+.home{
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  
+
+}
+.grenn .user{
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: darkgoldenrod;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.grenn{
+  margin-top: 80px;
+  margin-bottom: 100px;
+  height: 100px;
+  width: 100%;
+  background-color: darkolivegreen;
+  text-align: center;
+}
+.price{
+  font-size: 18px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+.black{
+  color: black !important;
+}
+
+
+
+.bug{
+ margin-bottom: 30px;
+}
+.card img{
+  height: 400px;
+}
+
+
+
+
+.collapse {
+  justify-content: flex-end;
+}
+.bi{
+  margin-left: 100px;
+}
+.btn-primary{
+  margin-bottom: 10px;
+}
+.card-header{
+  background: whitesmoke !important;
+  border-bottom: none !important;
+}
+.card-title{
+  color: black !important;
+}
+.collapsed{
+  color: black !important;
+}
+.card-t {
+  border: 0.3px solid darkgrey !important;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.card{ 
+  background :transparent !important;
+  border: none !important;
+}
+svg{
+  color: green !important;
+  margin-right: 10px;
+}
+.fa-align-justify{
+  color: darkgrey !important;
+  margin-left: 10px;
+
+}
+.delete{
+  color: red !important;
+  margin-right: 10px;
+}
+.modal-body{
+  font-size: 22px;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+.text_box {
+  position: relative;
+}
+
+
+.inp_text{
+border: none;
+width: 100% !important;
+padding: 10px;
+
+}
+
+.inp_text:focus{
+  outline: none;
+}
+.form-control{
+  width: 90% !important;
+}
+
+.box_input{
+  height: calc(2.25rem + 2px);
+  width: 90% !important;
+
+} 
+.enter_inp{
+  left: 90%;
+  position: absolute;
+  margin-bottom: 0 !important;
+  margin-left: 8px;  
+}
+

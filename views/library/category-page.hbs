@@ -1,0 +1,28 @@
+{{#if lessons.length}}
+<div class="row justify-content-center">
+  {{#each lessons}}
+  <div class="col-3">
+    <div class="card">
+      <img src="/images/{{img}}" class="card-img-top" alt="{{name}}">
+      <video controls>
+        <source src="{{url}}" />
+      </video>
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+      </div>
+      {{#iftr @root.isadmin @root.ismanager}}
+      <div class="d-flex justify-content-between p-2">
+        <a class="btn btn-primary" href="/lesson/edit/{{_id}}">Edit</a>
+        <form action="/lesson/delete/{{_id}}" method="POST">
+          <input type="hidden" name="libraryId" value="{{libraryId}}">
+          <button class="btn btn-primary">Delete</button>
+        </form>
+      </div>
+      {{/iftr}}
+    </div>
+  </div>
+  {{/each}}
+  {{else}}
+  <h2>category is empty !</h2>
+</div>
+{{/if}}

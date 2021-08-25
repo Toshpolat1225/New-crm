@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-8">
+        <h1>Add new Salary</h1>
+        <form action="/salary/worker/add" method="POST">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="price">Salary price</label>
+                    <input type="number" class="form-control" id="price" name="price" required />
+                </div>
+                <div class="form-group">
+                    <label for="dateOld">old date</label>
+                    <input type="date" class="form-control" id="dateOld" name="dateOld" required />
+                </div>
+                <div class="form-group">
+                    <label for="date">date</label>
+                    <input type="date" class="form-control" id="date" name="date" required />
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <input type="hidden" name="_csrf" value="{{csrf}}" id="csrf" />
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,307 @@
+<div style="position: relative;">
+  <!-- Navbar -->
+  <nav
+    style="margin: 0;"
+    class="main-header navbar navbar-expand navbar-white navbar-light"
+  >
+    <!-- Left navbar links -->
+    <div style="width: 100%" class="d-flex justify-content-between lidNavbar">
+      <div>
+        <ul class="navbar-nav d-flex flex-wrap">
+          {{#if lids}}
+            {{#each lids}}
+              <li class="nav-item d-none d-sm-inline-block">
+                <a
+                  style="font-size: 17px; font-weight:600; margin-left: 15px"
+                  href="/lids/lidCategory/{{id}}"
+                  class="nav-link"
+                >{{name}}<span
+                    class="badge badge-primary navbar-badge"
+                  >{{count}}</span></a>
+              </li>
+            {{/each}}
+          {{else}}
+            <p>No any category !</p>
+          {{/if}}
+        </ul>
+        <ul class="navbar-nav d-flex flex-wrap">
+          <li class="nav-item d-none d-sm-inline-block">
+            <a
+              style="font-size: 17px; font-weight:600; margin-left: 15px"
+              href="/lids/today"
+              class="nav-link"
+            >Today<span
+                class="badge badge-primary navbar-badge"
+              >{{todayLength}}</span></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a
+              style="font-size: 17px; font-weight:600; margin-left: 15px"
+              href="/lids/tomorrow"
+              class="nav-link"
+            >Tomorrow<span
+                class="badge badge-primary navbar-badge"
+              >{{tomorrowLength}}</span></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a
+              style="font-size: 17px; font-weight:600; margin-left: 15px"
+              href="/lids/fire"
+              class="nav-link"
+            >Fire<span
+                class="badge badge-primary navbar-badge"
+              >{{fireLength}}</span></a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul class="navbar-nav ml-auto">
+          {{#iftr isadmin ismanager}}
+          <li class="nav-item">
+            <a class="nav-link" href="/lids/lidCategory">
+              <i class="fas fa-plus-circle"></i>
+            </a>
+          </li>
+          {{/iftr}}
+          <li class="nav-item">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-search"></i>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+    <div>
+
+    </div>
+  </nav>
+  <!-- /.navbar -->
+  {{#iftr isadmin ismanager}}
+  <section
+    class="content tugma"
+    style="position: absolute; right: 0;    top: 28px;
+    z-index: 10000000000;"
+  >
+    <div class="card-body">
+      <button
+        type="button"
+        class="btn btn-default"
+        data-toggle="modal"
+        data-target="#modal-xl"
+      >
+        New Lid
+      </button>
+    </div>
+    <div
+      class="modal fade"
+      id="modal-xl"
+      style="display: none;"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">New Lid</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/lids" method="POST">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="num1">Phone</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="num1"
+                        id="num1"
+                        placeholder="+998"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="status">Where they found us</label>
+                      <select
+                        name="found"
+                        class="form-control select2bs4 select2-hidden-accessible"
+                        style="width: 100%;"
+                        data-select2-id="17"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        id="status"
+                      >
+                        <option
+                          selected="selected"
+                          data-select2-id="19"
+                        >Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                      </select>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+
+                      <label for="status">Status</label>
+                      <select
+                        name="categoryId"
+                        class="form-control select2bs4 select2-hidden-accessible"
+                        style="width: 100%;"
+                        data-select2-id="17"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        id="status"
+                      >
+                        {{#each lids}}
+                          <option value="{{_id}}" id="{{_id}}">{{name}}</option>
+                        {{/each}}
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="num2">Phone</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="num2"
+                        id="num2"
+                        placeholder="+998"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="company">Company</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="company"
+                        name="company"
+                        placeholder="company"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="comment">Comment</label>
+                      <input
+                        type="message"
+                        class="form-control"
+                        id="comment"
+                        name="comment"
+                        placeholder="Comment"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="card card-primary collapsed-card">
+
+                      <div class="card-header">
+
+                        <div style="width:100%" class="card-tools">
+                          <button
+                            type="button"
+                            class="btn btn-tool"
+                            style="width:100%;"
+                            data-card-widget="collapse"
+                          >
+                            <h3 class="card-title">Note</h3>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="card-body" style="display: none;">
+                        <!-- Date -->
+                        <div class="form-group">
+                          <label>Date:</label>
+                          <div
+                            class="input-group date"
+                            id="reservationdate"
+                            data-target-input="nearest"
+                          >
+                            <input
+                              type="text"
+                              name="date"
+                              class="form-control datetimepicker-input"
+                              data-target="#reservationdate"
+                              placeholder="Write the date"
+                            />
+                            <div
+                              class="input-group-append"
+                              data-target="#reservationdate"
+                              data-toggle="datetimepicker"
+                            >
+                              <div class="input-group-text"><i
+                                  class="fa fa-calendar"
+                                ></i></div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <label for="note">Note comment</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="note"
+                            id="note"
+                            placeholder="Note comment"
+                          />
+                        </div>
+                        <!-- /.form group -->
+                      </div>
+                      <!-- /.card-body -->
+
+                    </div>
+                    <!-- /.card -->
+
+                  </div>
+                  <!-- /.card -->
+                </div>
+              </div>
+              <div class="col-12">
+                <button
+                  type="submit"
+                  class="btn btn-block btn-success btn-lg"
+                >Success</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+  </section>
+  {{/iftr}}
+</div>
+

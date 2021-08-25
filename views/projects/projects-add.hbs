@@ -1,0 +1,164 @@
+<form action="/projects/add" method="POST">
+  <input type="hidden" id="projectDate" name="date" />
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Project</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputName2">Project Name</label>
+            <input
+              type="text"
+              id="inputName2"
+              class="form-control"
+              name="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputDescription1">Project Description</label>
+            <textarea
+              id="inputDescription1"
+              class="form-control"
+              rows="4"
+              required
+              name="description"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputStatusZ">Status</label>
+            <select id="inputStatusZ" class="form-control " name="status">
+              <option value="On progress">On progress</option>
+              <option value="Canceled">Canceled</option>
+              <option value="Success">Success</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputClientCompany">Client Company</label>
+            <input
+              type="text"
+              id="inputClientCompany"
+              class="form-control"
+              required
+              name="company"
+            />
+          </div>
+          <div class="form-group">
+           
+            <label for="inputProjectLeader">Project Leader</label>
+            <select id="inputProjectLeader" class="form-control custom-select" name="leader" required>
+              {{#each workers}}
+              <option value="{{fullname}}" data-id="{{id}}">{{fullname}}</option>
+              {{/each}}
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="inputProjectDeadline">Project deadline</label>
+            <input
+              type="date"
+              id="inputProjectDeadline"
+              class="form-control"
+              pattern="[0-9]{4}[0-9]{2}[0-9]{2}"
+              name="deadline"
+              required
+            />
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Client</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputName4">Client Name</label>
+            <input
+              type="text"
+              id="inputName4"
+              class="form-control"
+              name="clientName"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputName5">Client phone number</label>
+            <input
+              type="number"
+              id="inputName5"
+              class="form-control"
+              name="clientNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputName6">Client location</label>
+            <input
+              type="text"
+              id="inputName6"
+              class="form-control"
+              name="clientLocation"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputTelegram">Telegram group</label>
+            <input
+              type="text"
+              id="inputTelegram"
+              class="form-control"
+              name="telegram"
+              required
+            />
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <div class="col-md-4">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Budget</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputEstimatedBudget7">Total payment</label>
+            <input
+              type="number"
+              id="inputEstimatedBudget7"
+              class="form-control"
+              name="totalPayment"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary addWorker"
+            id="addWorker"
+          >add worker</button>
+          <div class="cardBody">
+
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 d-flex justify-content-center">
+      <input
+        type="submit"
+        value="Create new Porject"
+        class="btn btn-success float-right"
+      />
+    </div>
+  </div>
+</form>

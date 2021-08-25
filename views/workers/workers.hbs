@@ -1,0 +1,166 @@
+{{#if workers.length}}
+  <div class="card card-solid">
+    <div class="card-body">
+      <div class="row" style="overflow-y: scroll; max-height: 900px">
+        {{#each workers}}
+
+          <div
+            class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column"
+          >
+            {{! modal }}
+            <div
+              class="modal fade"
+              id="as{{id}}"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete
+                      project</h5>
+                    <button
+                      style="border: none; background: none;"
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ><svg
+                        class="removeWorker"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        version="1.1"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      ><path
+                          class="removeWorker"
+                          d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"
+                        ></path></svg></button>
+                  </div>
+                  <div class="modal-body" style="text-align: center;">
+                    You definitely want to delete this project !
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >Close</button>
+                    <a
+                      href="/workers/remove/{{id}}"
+                      class="btn btn-danger"
+                    >Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{! modal }}
+            <div class="card bg-light d-flex flex-column">
+              <div
+                class="card-header text-muted card_header border-bottom-0 d-flex"
+              >
+                {{job}}
+                {{! edit and delete icons }}
+                {{#if @root.isadmin}}
+                <div class="action__icons">
+                  <a class="worker__edit" href="/workers/edit/{{id}}"><svg
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                      ></path><path
+                        d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                      ></path></svg></a>
+
+                  <button
+                    style="border: none; background: transparent;"
+                    class="worker__remove"
+                    data-bs-toggle="modal"
+                    data-bs-target="#as{{id}}"
+                  ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                        d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 0 0-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z"
+                      ></path><path
+                        d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path></svg></button>
+                </div>
+                {{/if }}
+
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-7">
+                    <h2 class="lead worker__fullname"><b>{{fullname}}</b></h2>
+                    <p class="text-muted about_text text-sm"><b>About:
+                      </b>{{about}}</p>
+                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                      <li class="small"><span class="fa-li"><i
+                            class="fas fa-lg fa-building"
+                          ></i></span>
+                        Address:
+                        {{address}}</li>
+                      <li class="small"><span class="fa-li"><i
+                            class="fas fa-lg fa-phone"
+                          ></i></span>
+                        Phone #: +998{{phone}}</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="col-5 d-flex justify-content-center align-items-center"
+                  >
+                    <div class="worker_avatar">
+                      <img
+                        src="/images/{{avatar}}"
+                        alt="user-avatar"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                  <a
+                    href="{{telegram}}"
+                    target="_blank"
+                    class="btn btn-sm bg-teal"
+                  >
+                    <i class="fas fa-comments"></i>
+                  </a>
+                  <a href="/workers/{{id}}" class="btn btn-sm btn-primary">
+                    <i class="fas fa-user"></i>
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {{/each}}
+      </div>
+    </div>
+    <!-- /.card-body -->
+
+    <!-- /.card-footer -->
+  </div>
+{{else}}
+  <p class="no_workers">There is not any workers!!!</p>
+{{/if}}

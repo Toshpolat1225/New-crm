@@ -1,0 +1,58 @@
+
+
+<div class="row justify-content-center m-0">
+  <div class="col-md-6">
+    <!-- jquery validation -->
+    <div class="card card-primary">
+      <!-- /.card-header -->
+      <!-- form start -->
+      <form action="/price/edit/{{category.id}}" method="POST">
+        <div class="card-body">
+          <div class="form-group">
+            <label>Text</label>
+            <div class="text_box d-flex flex-column">
+              <div class="box_input d-flex">
+                {{#each info}}
+                <input type="text" name="info" class="inp_text" value="{{text}}"/>
+                {{/each}} 
+              <a type="button" class="btn btn-primary enter_inp">send</a>
+              </div>
+            </div>
+      
+             
+          </div>
+          <div class="form-group">
+            <label for="info">Name</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="name"
+              placeholder="name"
+              value="{{category.name}}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              name="price"
+              class="form-control"
+              id="price"
+              placeholder="Price"
+              min="1"
+              value="{{category.price}}"
+              required
+            />
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.card -->
+  </div>
+</div>

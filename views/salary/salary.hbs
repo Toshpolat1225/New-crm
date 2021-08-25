@@ -1,0 +1,61 @@
+{{#if salary.length}}
+<div class="row justify-content-center align-content-center">
+    <div class="col-10 table-responsive">
+        <table class="table table-striped text-center align-content-center justify-content-between">
+            <thead>
+                <tr>
+                    <th class="text-center pl-4 tr_num" style="width: 5%;">№</th>
+                    <th class="tr_num" style="width: 20%;">Name</th>
+                    <th class="tr_num" style="width: 15%;">Last wage</th>
+                    <th class="tr_num" style="width: 15%;">Current wage</th>
+                    <th class="tr_num" style="width: 15%;">Salary</th>
+                   {{#iftr isadmin ismanager}}
+                    <th class="tr_num" style="width: 20%;">Edit</th>
+                    {{/iftr}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each salary}}
+                <tr>
+
+                    <td>
+                        <ul class="d-flex justify-content-center">
+                            <span class="numbers"></span>   
+                        </ul>
+                    </td>
+
+                    <td>
+                        <p class="name">{{name}}</p>
+                    </td>
+                    <td>
+                        <p class="data_old">{{dateOld}}</p>
+                    </td>
+                    <td>
+                        <p class="data_new">{{date}}</p>
+                    </td>
+                    <td>
+                        <p class="price">{{price}}</p>
+                    </td>
+                            {{#iftr @root.isadmin @root.ismanager}}
+                    <td class="d-flex justify-content-center">
+                        <div class="row justify-content-between">
+                            <a class="btn btn-primary btnEdit" href="/salary/{{id}}/edit?allow=true">edit</a>
+                            <form style="width: auto;" action="/salary/remove" method="POST">
+                                <input type="hidden" name="_csrf" value="{{csrf}}" id="csrf" />
+                                <input type="hidden" value="{{id}}" name="id" id="id" />
+                                <button class="btn btn-danger btnEdit ml-3">delete</button>
+                         
+                            </form>
+                    </td>
+                            {{/iftr}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.col -->
+</div>
+{{else}}
+<p>here is empty !</p>
+{{/if}}
+<!-- /.row -->
