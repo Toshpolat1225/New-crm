@@ -15,10 +15,10 @@ const workerRouter = require("./routes/worker/workers");
 const projectsRouter = require("./routes/projects/projects");
 const AuthRouter = require("./routes/auth/auth");
 const indexRouter = require("./routes/index");
-const lessonRouter = require("./routes/library/lessons");
+const lessonRouter = require("./routes/library/lessons"); 
 const libraryRouter = require("./routes/library/library");
 const traineesRouter = require("./routes/trainees/trainees-projects");
-const lidsRouter = require("./routes/lids/lids");
+const lidsRouter = require("./routes/lids/lids");   
 const salaryRouter = require("./routes/salary/salary");
 const priceRouter = require('./routes/price/price')
 const store = new MongoDbStore({
@@ -38,10 +38,6 @@ const hbs = exhbs.create({
     
   
 });
-
-
-
-
 
 // hbs.registerHelper("getTime", function(){
      
