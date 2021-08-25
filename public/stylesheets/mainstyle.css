@@ -13,9 +13,13 @@
     display: block;
 }
 
-.brand-link {
+.brand-text {
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #2e3548;
     padding: 0.7025rem .5rem;
+}
+
+.userProfile {
+    margin-top: 0 !important;
 }

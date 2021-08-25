@@ -1,75 +1,65 @@
 <aside class="main-sidebar sidebar-primary elevation-4">
   <!-- Brand Logo -->
-  <a class="brand-link">
+  <a class="brand-text">
     <img src="https://changeit.uz/images/logo.png" alt="png">
   </a>
-  
+
   <div class="sidebar">
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="user-panel brand-text userProfile mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img
-          src="/images/{{user.avatar}}"
-          id="admin_img"
-          class="img-circle elevation-2"
-          alt="User Image"
-        />
+        <img src="/images/{{user.avatar}}" id="admin_img" class="img-circle elevation-2" alt="User Image" />
       </div>
       <div class="info">
         <a href="#" class="d-block" id="admin_name">{{user.fullname}}</a>
       </div>
     </div>
     <nav class="mt-2">
-      <ul
-        class="nav nav-pills nav-sidebar flex-column"
-        data-widget="treeview"
-        role="menu"
-        data-accordion="false"
-      >
-             <li class="nav-item">
-               <a href="/workers" class="nav-link">
-              <p>All staff</p>
-              </a>
-            </li>
-            {{#unless isstudent}}
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="/workers" class="nav-link">
+            <p>All staff</p>
+          </a>
+        </li>
+        {{#unless isstudent}}
 
-          {{#iftr isadmin ismanager}}
-            <li class="nav-item">
-              <a href="/price/addPrice/add" class="nav-link">
-                <p>Add price</p>
-              </a>
-            </li>
-            {{/iftr}}
-            <li class="nav-item">
-              <a href="/price" class="nav-link">
-                <p>View price</p>
-              </a>
-            </li>
+        {{#iftr isadmin ismanager}}
+        <li class="nav-item">
+          <a href="/price/addPrice/add" class="nav-link">
+            <p>Add price</p>
+          </a>
+        </li>
+        {{/iftr}}
+        <li class="nav-item">
+          <a href="/price" class="nav-link">
+            <p>View price</p>
+          </a>
+        </li>
 
-           {{#iftr isadmin ismanager}}
-      <li class="nav-item">
+        {{#iftr isadmin ismanager}}
+        <li class="nav-item">
           <a href="/lids" class="nav-link">
             <p>
               Lid
             </p>
           </a>
         </li>
-            <li class="nav-item">
-              <a href="/salary/add" class="nav-link">
-                <p>Add salary</p>
-              </a>
-            </li>
-            {{/iftr}}
-            <li class="nav-item">
-              <a href="/salary" class="nav-link">
-                <p>Salary</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/salary/worker" class="nav-link">
-                <p>worker salary</p>
-              </a>
-            </li>
-            
+        <li class="nav-item">
+          <a href="/salary/add" class="nav-link">
+            <p>Add salary</p>
+          </a>
+        </li>
+        {{/iftr}}
+        <li class="nav-item">
+          <a href="/salary" class="nav-link">
+            <p>Salary</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/salary/worker" class="nav-link">
+            <p>worker salary</p>
+          </a>
+        </li>
+
 
 
         <li class="nav-item">
@@ -84,7 +74,7 @@
           </a>
         </li>
         {{/iftr}}
-      
+
         {{#if isadmin}}
         <li class="nav-item">
           <a href="/workers/add" class="nav-link">
@@ -93,7 +83,7 @@
         </li>
         {{/if}}
 
-          {{#iftr isadmin ismanager}}
+        {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/library/add" class="nav-link">
             <p>Create library</p>
@@ -105,8 +95,8 @@
           </a>
         </li>
         {{/iftr}}
-      
-         {{#iftr isadmin ismanager}}
+
+        {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/trainees/add" class="nav-link">
             <p>Create trainees project</p>
@@ -114,7 +104,7 @@
         </li>
         {{/iftr}}
         {{/unless}}
-          <li class="nav-item">
+        <li class="nav-item">
           <a href="/trainees" class="nav-link">
             <p>Trainees projects</p>
           </a>
@@ -125,8 +115,8 @@
             <p>Library</p>
           </a>
         </li>
-         
-      
+
+
       </ul>
     </nav>
   </div>
