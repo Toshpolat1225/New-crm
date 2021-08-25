@@ -21,7 +21,6 @@ const traineesRouter = require("./routes/trainees/trainees-projects");
 const lidsRouter = require("./routes/lids/lids");
 const salaryRouter = require("./routes/salary/salary");
 const priceRouter = require('./routes/price/price')
-
 const store = new MongoDbStore({
   uri: MONGODB_URI,
   collection: "session",

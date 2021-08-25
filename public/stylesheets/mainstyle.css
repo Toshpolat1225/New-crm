@@ -1,0 +1,13 @@
+.sidebar-primary{
+    background-color: #252b3b;
+}
+
+.user-panel img{
+    width: 100%;
+    height: 100%;
+}
+.user-panel .image{
+    padding: 0;
+    width: 2.1rem;
+    display: block;
+}

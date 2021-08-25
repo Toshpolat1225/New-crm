@@ -7,7 +7,7 @@ const Workers = require('../../models/workers')
 
 
 router.get("/login", async (req, res) => {
-  
+    
     res.render("auth/login", {
       title: "Admin authentication",
       layout: "user",
