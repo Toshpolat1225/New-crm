@@ -9,6 +9,7 @@ nav.nav-pills {
 a {
   text-decoration: none !important;
 }
+
 .row {
   --bs-gutter-x: 1rem !important;
 }
@@ -41,8 +42,9 @@ a {
   padding: 10px 10px 10px 25px;
   margin: 20px 0;
 }
-.btn-sm{
-  margin-bottom: 0!important;
+
+.btn-sm {
+  margin-bottom: 0 !important;
 }
 
 .text_list {
@@ -72,18 +74,22 @@ svg.removeWorker {
 .action__icons a {
   text-decoration: none;
 }
+
 .worker__edit svg {
   color: #0b5ed7;
   font-size: 24px;
 }
+
 .worker__remove svg {
   color: red;
   font-size: 24px;
 }
+
 .card-header {
   position: relative;
   width: 100%;
 }
+
 .action__icons {
   position: absolute;
   right: 1rem;
@@ -94,9 +100,11 @@ svg.removeWorker {
 .worker__fullname {
   margin-top: 2rem;
 }
+
 .about_text {
   max-width: 300px;
 }
+
 .worker_avatar {
   height: 150px;
   width: 150px;
@@ -106,7 +114,7 @@ svg.removeWorker {
 }
 
 .img-fluid {
-  height: 100%!important;
+  height: 100% !important;
   width: auto;
   transform: scale(1.1);
   position: absolute;
@@ -114,6 +122,7 @@ svg.removeWorker {
   right: 50%;
   transform: translate(50%, -50%);
 }
+
 .view_avatar {
   max-width: 100%;
   height: auto;
@@ -151,24 +160,28 @@ svg.removeWorker {
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
 #sec1,
 #min1,
 #hour1,
 #day1 {
   margin-left: 8px;
 }
+
 #timer_wrap {
-border-radius: 10px;
+  border-radius: 10px;
   height: 30px;
   display: flex;
   justify-content: center;
 }
+
 #clock {
   height: auto;
   background: url(clock.jpg) left top no-repeat;
   padding: 0px 10px 0px 10px;
   position: absolute;
 }
+
 #razd {
   float: left;
   color: #6c757d !important;
@@ -177,6 +190,7 @@ border-radius: 10px;
   margin: 0px 0px 0px 2px;
   padding-bottom: 2px;
 }
+
 #stop {
   margin: 0px;
   padding: 0px;
@@ -189,6 +203,7 @@ border-radius: 10px;
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
 /* clock============================ */
 
 
@@ -201,19 +216,21 @@ border-radius: 10px;
 
 
 /* Narxlar bo'limi  css */
-*{
+* {
   text-decoration: none;
-  
+
 }
-.home{
+
+.home {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  
+
 
 }
-.grenn .user{
+
+.grenn .user {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
@@ -221,7 +238,8 @@ border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 0;
 }
-.grenn{
+
+.grenn {
   margin-top: 80px;
   margin-bottom: 100px;
   height: 100px;
@@ -229,19 +247,21 @@ border-radius: 10px;
   background-color: darkolivegreen;
   text-align: center;
 }
-.price{
+
+.price {
   font-size: 18px;
   margin-right: 10px;
   margin-bottom: 0;
 }
-.black{
+
+.black {
   color: black !important;
 }
 
 
 
-.bug{
- margin-bottom: 30px;
+.bug {
+  margin-bottom: 30px;
 }
 
 
@@ -251,80 +271,95 @@ border-radius: 10px;
 .collapse {
   justify-content: flex-end;
 }
-.bi{
+
+.bi {
   margin-left: 100px;
 }
-.btn-primary{
+
+.btn-primary {
   margin-bottom: 10px;
 }
-.card-header{
+
+.card-header {
   background: whitesmoke !important;
   border-bottom: none !important;
 }
-.card-title{
+
+.card-title {
   color: black !important;
 }
-.collapsed{
+
+.collapsed {
   color: black !important;
 }
+
 .card-t {
   border: 0.3px solid darkgrey !important;
   margin-bottom: 20px;
   border-radius: 4px;
 }
-.card{ 
-  background :transparent !important;
+
+.card {
+  background: transparent !important;
   border: none !important;
 }
-svg{
+
+svg {
   margin-right: 10px;
 }
-.fa-align-justify{
+
+.fa-align-justify {
   color: darkgrey !important;
   margin-left: 10px;
 
 }
-.delete{
+
+.delete {
   color: red !important;
   margin-right: 10px;
 }
-.modal-body{
+
+.modal-body {
   font-size: 22px;
 }
-ul{
+
+ul {
   padding: 0;
   margin: 0;
   text-align: start;
 }
+
 .text_box {
   position: relative;
 }
 
 
-.inp_text{
-border: none;
-width: 100% !important;
-padding: 10px;
+.inp_text {
+  border: none;
+  width: 100% !important;
+  padding: 10px;
 
 }
 
-.inp_text:focus{
+.inp_text:focus {
   outline: none;
 }
-.form-control{
+
+.form-control {
   width: 90% !important;
 }
 
-.box_input{
+.box_input {
   height: calc(2.25rem + 2px);
   width: 90% !important;
 
-} 
-.enter_inp{
+}
+
+.enter_inp {
   left: 90%;
   position: absolute;
   margin-bottom: 0 !important;
-  margin-left: 8px;  
+  margin-left: 8px;
 }
 
 
@@ -332,7 +367,7 @@ padding: 10px;
 
 /* registration ==================================== */
 
-.register-worker1{
+.register-worker1 {
   width: 100%;
   padding-top: 20px;
 }
@@ -344,37 +379,43 @@ padding: 10px;
 
 
 /* ====================================================================== salary page */
-.data{
+.data {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-.salary-card{
+
+.salary-card {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-.salary-card .data{
+
+.salary-card .data {
   display: flex;
   justify-content: space-around;
 }
+
 .data_old {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
 }
+
 .data_new {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
 }
-.name{
+
+.name {
   font-size: 18px;
   margin-bottom: 0;
   font-weight: 500;
   text-transform: capitalize;
 }
-.price{
+
+.price {
   font-size: 18px;
   padding: 0;
   margin: 0;
@@ -382,10 +423,15 @@ padding: 10px;
 }
 
 .numbers {
- text-align: start;
- font-weight: 500;
- font-size: 18px;
-}
-.tr_num{
+  text-align: start;
+  font-weight: 500;
   font-size: 18px;
+}
+
+.tr_num {
+  font-size: 18px;
+}
+
+.customSelect {
+  display: block !important;
 }
