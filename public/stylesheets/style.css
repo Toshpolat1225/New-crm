@@ -204,17 +204,7 @@ svg.removeWorker {
 
 
 
-
-
-
-
-
-
 /* Narxlar bo'limi  css */
-* {
-  text-decoration: none;
-
-}
 
 .home {
   text-align: center;
@@ -253,15 +243,9 @@ svg.removeWorker {
   color: black;
 }
 
-
-
 .bug {
   margin-bottom: 30px;
 }
-
-
-
-
 
 .collapse {
   justify-content: flex-end;
@@ -424,5 +408,5 @@ ul {
 }
 
 .customSelect {
-  display: block ;
+  display: block;
 }
