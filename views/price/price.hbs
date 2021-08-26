@@ -1,22 +1,23 @@
 <div class="row justify-content-center m-0">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <!-- /.card-header -->
     <div class="card-body ">
       <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
       <div id="accordion">
         {{#if project.length}}
         {{#each project}}
-        <div class="card-t ">
-          <div class="card-header cardHeader d-flex align-items-center">
+        <div class="card-t" style="background: #fff; border: none; border-radius: 0;
+    box-shadow: 0 1px 7px #e2e2e2;">
+          <div class="card-header cardHeader d-flex align-items-center" style="background: #f9f9f9;">
             <h4 class="card-title w-100">
               <a class="d-block black cardLink collapsed" data-toggle="collapse" href="#a{{id}}" aria-expanded="false">
                 {{name}}
             </h4>
             </a>
-            <h3 class="price">{{price}}</h3>
+            <h3 class="price projectPrice">{{price}}</h3>
             </h4>
             {{#iftr @root.isadmin @root.ismanager}}
-            <a class="priceIcons" style="color: #39A2DB;" href="/price/edit/{{id}}"><i class="fal fa-edit"></i></a>
+            <a class="priceIcons" style="color: #39A2DB;" href="/price/edit/{{id}}"><i style="color: #505d69;" class="fal fa-edit"></i></a>
             <a class="priceIcons" style="color: #FF4C29;" href="/price/delete/{{id}}"><i
                 class="fal fa-trash-alt"></i></a>
             {{/iftr}}
@@ -27,10 +28,10 @@
           </div>
         </div>
         <div id="a{{id}}" class="collapse" data-parent="#accordion" />
-        <div class="card-body">
+        <div class="card-body" style="background: #f9f9f9;">
           <ol class="price-list">
             {{#each allInfo}}
-            <li>{{text}}</li>
+            <li class="listText">{{text}}</li>
             {{/each}}
           </ol>
         </div>

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .auth-buttons {
@@ -9,7 +9,6 @@ body {
 nav.nav-pills {
   width: 200px;
 }
-
 
 .btnEdit {
   width: auto;
@@ -203,9 +202,6 @@ svg.removeWorker {
 
 /* clock============================ */
 
-
-
-
 /* Narxlar bo'limi  css */
 
 .home {
@@ -213,8 +209,6 @@ svg.removeWorker {
   font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 20px;
-
-
 }
 
 .grenn .user {
@@ -276,7 +270,6 @@ svg {
 .fa-align-justify {
   color: darkgrey;
   margin-left: 10px;
-
 }
 
 .delete {
@@ -299,17 +292,16 @@ ul {
   width: 90%;
   background-color: #fff;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   box-shadow: inset 0 0 0 transparent;
-  padding: .275rem .75rem;
+  padding: 0.275rem 0.75rem;
 }
-
 
 .inp_text {
   border: none;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   width: 100%;
-  padding: .075rem .75rem;
+  padding: 0.075rem 0.75rem;
 }
 
 .inp_text:focus {
@@ -326,11 +318,21 @@ ul {
 
 .enter_inp {
   top: 52.4px;
-  right: 12px;
+  right: 25px;
   position: absolute;
   margin-bottom: 0;
   margin-left: 8px;
-  padding: .205rem .65rem;
+  padding: 0.205rem 0.65rem;
+}
+
+.projectPrice {
+  font-size: 18px;
+  font-weight: 400 !important;
+  margin-right: 15px !important;
+}
+
+.listText {
+  color: #505d69;
 }
 
 .enter_inp svg {
@@ -346,13 +348,13 @@ ul {
 }
 
 .cardLink {
-  color: #423F3E;
+  color: #505d69;
 }
 
 .cardLink:hover {
-  color: #423F3E;
+  opacity: 0.8;
+  color: #000;
 }
-
 
 /* registration ==================================== */
 
@@ -360,12 +362,6 @@ ul {
   width: 100%;
   padding-top: 20px;
 }
-
-
-
-
-
-
 
 /* ====================================================================== salary page */
 .data {
