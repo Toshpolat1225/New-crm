@@ -1,15 +1,22 @@
 <aside class="main-sidebar sidebar-primary elevation-4">
   <!-- Brand Logo -->
-  <a class="brand-text brandText">
-    <img src="https://changeit.uz/images/logo.png" alt="png">
-  </a>
+  <div class="brand-link brandItem">
+    <span class="brandLink">
+      <i class="fas fa-dice-d20 brand-image  img-circle elevation-3"></i>
+    </span>
+    <a class="brand-text brandLogo">
+      <img src="https://changeit.uz/images/logo.png" alt="png">
+    </a>
+  </div>
 
   <div class="sidebar">
 
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <ul class="nav asideMenu nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+        data-accordion="false">
         <li class="nav-item">
           <a href="/workers" class="nav-link">
+            <i class="fal fa-users"></i>
             <p>All staff</p>
           </a>
         </li>
@@ -18,12 +25,14 @@
         {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/price/addPrice/add" class="nav-link">
+            <i class="fal fa-usd-square"></i>
             <p>Add price</p>
           </a>
         </li>
         {{/iftr}}
         <li class="nav-item">
           <a href="/price" class="nav-link">
+            <i class="fal fa-usd-square"></i>
             <p>View price</p>
           </a>
         </li>
@@ -31,6 +40,7 @@
         {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/lids" class="nav-link">
+            <i class="fal fa-user-tie"></i>
             <p>
               Lid
             </p>
@@ -38,17 +48,20 @@
         </li>
         <li class="nav-item">
           <a href="/salary/add" class="nav-link">
+            <i class="fal fa-dollar-sign"></i>
             <p>Add salary</p>
           </a>
         </li>
         {{/iftr}}
         <li class="nav-item">
           <a href="/salary" class="nav-link">
+            <i class="fal fa-dollar-sign"></i>
             <p>Salary</p>
           </a>
         </li>
         <li class="nav-item">
           <a href="/salary/worker" class="nav-link">
+            <i class="fal fa-wallet"></i>
             <p>worker salary</p>
           </a>
         </li>
@@ -57,12 +70,14 @@
 
         <li class="nav-item">
           <a href="/projects" class="nav-link">
+            <i class="fal fa-project-diagram"></i>
             <p>Projects</p>
           </a>
         </li>
         {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/projects/add" class="nav-link">
+            <i class="fal fa-project-diagram"></i>
             <p>Create project</p>
           </a>
         </li>
@@ -71,6 +86,7 @@
         {{#if isadmin}}
         <li class="nav-item">
           <a href="/workers/add" class="nav-link">
+            <i class="fal fa-user-plus"></i>
             <p>Add a new worker</p>
           </a>
         </li>
@@ -79,11 +95,13 @@
         {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/library/add" class="nav-link">
+            <i class="fal fa-books-medical"></i>
             <p>Create library</p>
           </a>
         </li>
         <li class="nav-item">
           <a href="/lesson/add" class="nav-link">
+            <i class="fal fa-tasks"></i>
             <p>Create lesson</p>
           </a>
         </li>
@@ -92,6 +110,7 @@
         {{#iftr isadmin ismanager}}
         <li class="nav-item">
           <a href="/trainees/add" class="nav-link">
+            <i class="fal fa-tasks-alt"></i>
             <p>Create trainees project</p>
           </a>
         </li>
@@ -99,12 +118,14 @@
         {{/unless}}
         <li class="nav-item">
           <a href="/trainees" class="nav-link">
+            <i class="fal fa-tasks-alt"></i>
             <p>Trainees projects</p>
           </a>
         </li>
 
         <li class="nav-item">
           <a href="/library" class="nav-link">
+            <i class="fal fa-books"></i>
             <p>Library</p>
           </a>
         </li>

@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .auth-buttons {
   width: 100% !important;
 }
@@ -245,10 +249,6 @@ svg.removeWorker {
   margin-bottom: 30px;
 }
 
-.collapse {
-  justify-content: flex-end;
-}
-
 .bi {
   margin-left: 100px;
 }
@@ -316,7 +316,7 @@ ul {
   outline: none;
 }
 
-.form-control {
+.formControl {
   width: 90%;
 }
 
@@ -335,6 +335,22 @@ ul {
 
 .enter_inp svg {
   font-size: 26px;
+}
+
+.priceIcons {
+  margin-left: 16px;
+}
+
+.cardHeader {
+  background: transparent;
+}
+
+.cardLink {
+  color: #423F3E;
+}
+
+.cardLink:hover {
+  color: #423F3E;
 }
 
 
