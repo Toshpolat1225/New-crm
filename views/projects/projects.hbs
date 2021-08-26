@@ -48,10 +48,10 @@
                 {{#each works}}
                   {{#if worker}}
                     <li class="list-inline-item">
-                      <a href="/workers/{{worker.id}}">
+                      <a class="worker_ava" href="/workers/{{worker.id}}">
                         <img
                           alt="{{worker.fullname}}"
-                          class="table-avatar"
+                          class="worker__img"
                           src="/images/{{worker.avatar}}"
                         />
                       </a>
