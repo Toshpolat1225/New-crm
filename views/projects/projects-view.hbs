@@ -1,6 +1,6 @@
 <!-- Default box -->
-<div class="card">
-  <div class="card-header">
+<div class="card viewProjectCard">
+  <div class="card-header cardHeader">
     <h3 class="card-title">Projects Detail</h3>
 
   </div>
@@ -9,7 +9,7 @@
       <div class="col-12 col-md-12 col-lg-9 order-2 order-md-1">
         <div class="row">
           <div class="col-12 col-sm-4">
-            <div class="info-box bg-light">
+            <div class="info-box infoBox">
               <div class="info-box-content">
                 <span class="info-box-text text-center text-muted">Project
                   budget</span>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="col-12 col-sm-4">
-            <div class="info-box bg-light">
+            <div class="info-box infoBox">
               <div class="info-box-content">
                 <span class="info-box-text text-center text-muted">Project
                   deadline</span>
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="col-12 col-sm-4">
-            <div class="info-box bg-light">
+            <div class="info-box infoBox">
               <div class="info-box-content">
                 <span class="info-box-text text-center text-muted">Project time
                   left</span>
@@ -42,7 +42,7 @@
                 <span class="info-box-number text-center text-muted mb-0">
                   {{! ======================= }}
                   <div id="timer_wrap">
-                    <div id="clock">
+                    <div id="clock" style="margin-top: 0;">
                       <div id="day">
                         <p id="day0" class="clockText"></p>
                         <p id="day1" class="clockText"></p>
@@ -78,65 +78,70 @@
         </div>
         <div class="row">
           <div class="col-12 col-md-12text_list">
-            <h3 class="text"><svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 640 512"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"
-                >
-                </path>
-              </svg>
-              {{project.name}}</h3>
-            <br />
-            <div class="text-muted">
-              <p class="text">Project description
-                <b class="d-block">{{project.description}}</b>
-              </p>
-              <p class="text">Client Company
-                <b class="d-block">{{project.company}}</b>
-              </p>
-              <p class="text">Project Leader
-                <b class="d-block">{{project.leader}}</b>
-              </p>
-              <p class="text">Telegram group
-                <b class="d-block"><a
-                    href="{{project.telegram}}"
-                  >{{project.telegram}}</a></b>
-              </p>
+            <div class="row">
+              <div class="col-6">
+                <h3 class="text"><svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 640 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"
+                    >
+                    </path>
+                  </svg>
+                  {{project.name}}</h3>
+                <br />
+                <div class="text-muted">
+                  <p class="text">Project description
+                    <b class="d-block">{{project.description}}</b>
+                  </p>
+                  <p class="text">Client Company
+                    <b class="d-block">{{project.company}}</b>
+                  </p>
+                  <p class="text">Project Leader
+                    <b class="d-block">{{project.leader}}</b>
+                  </p>
+                  <p class="text">Telegram group
+                    <b class="d-block"><a
+                        href="{{project.telegram}}"
+                      >{{project.telegram}}</a></b>
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <h5 class="mt-5 text-muted">Client info</h5>
+                <ul class="list-unstyled text-muted text_list">
+                  <li>
+                    <p class="text">Client name
+                      <b class="d-block">{{project.clientName}}</b>
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text">Client phone number
+                      <a
+                        style="color: #6c757d!important;"
+                        href="tel:{{project.clientNumber}}"
+                      ><b class="d-block">+{{project.clientNumber}}</b></a>
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text">Client Location
+                      <b class="d-block">{{project.clientLocation}}</b>
+                    </p>
+                  </li>
+
+                </ul>
+              </div>
             </div>
-
-            <h5 class="mt-5 text-muted">Project files</h5>
-            <ul class="list-unstyled text-muted text_list">
-              <li>
-                <p class="text">Client name
-                  <b class="d-block">{{project.clientName}}</b>
-                </p>
-              </li>
-              <li>
-                <p class="text">Client phone number
-                  <a
-                    style="color: #6c757d!important;"
-                    href="tel:{{project.clientNumber}}"
-                  ><b class="d-block">+{{project.clientNumber}}</b></a>
-                </p>
-              </li>
-              <li>
-                <p class="text">Client Location
-                  <b class="d-block">{{project.clientLocation}}</b>
-                </p>
-              </li>
-
-            </ul>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-12 col-lg-3 order-1 order-md-2 mt-md-5">
+      <div class="col-12 col-md-12 col-lg-3 order-1 order-md-2 mt-5 mt-lg-0">
         <h4>Project workers</h4>
         {{#if project.works}}
           {{#each project.works}}

@@ -213,7 +213,8 @@ th {
 /* create projects */
 .createCard .cardHeader {
   border-radius: 0;
-  background: #9ba4b4 !important;
+  background: #787a91 !important;
+  opacity: 0.9;
   opacity: 0.95;
 }
 
@@ -236,9 +237,10 @@ th {
 }
 
 .createCard .card .addWorker {
+  background: #787a91 !important;
+  opacity: 0.9;
   border-radius: 0;
   border: none;
-  background: #9ba4b4 !important;
 }
 
 .createCard .card textarea {
@@ -254,5 +256,28 @@ th {
   padding: 10px;
   border-radius: 0;
   border: none;
-  background: #9ba4b4 !important;
+  background: #787a91 !important;
+  opacity: 0.9;
+}
+
+.viewProjectCard {
+  background: #f9f9f9;
+  border-radius: 0;
+  border: none;
+}
+
+.viewProjectCard .cardHeader {
+  background: transparent;
+}
+
+.viewProjectCard .infoBox {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0px 7px #e2e2e2;
+}
+
+.viewProjectCard .infoBox span {
+  color: #646464;
+  opacity: 0.9;
 }
