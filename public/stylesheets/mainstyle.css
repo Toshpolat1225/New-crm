@@ -130,13 +130,13 @@ body {
 }
 
 .projectCard {
-  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+  box-shadow: 0 0px 10px #e2e2e2;
   border-radius: 0;
 }
 
 .projectCard .projectItem,
 .projectCard .cardHeader {
-  background: #fff !important;
+  background: #f9f9f9 !important;
 }
 
 .projectCard .projectTbody {
@@ -185,11 +185,9 @@ th {
   margin-bottom: 10px;
 }
 
-.projectCard .projectTbody .project_progress {
-}
-
 .projectCard .projectTbody .projectDeadlineText {
-  opacity: 0.75;
+  color: #bb2205;
+  opacity: 0.6;
 }
 
 .projectCard .projectTbody .projectIcons {
@@ -210,4 +208,51 @@ th {
 
 .projectCard .cardHeader {
   padding-bottom: 0;
+}
+
+/* create projects */
+.createCard .cardHeader {
+  border-radius: 0;
+  background: #9ba4b4 !important;
+  opacity: 0.95;
+}
+
+.createCard .card {
+  border-radius: 0;
+  background: #f9f9f9;
+  box-shadow: 0 0px 10px #e3e3e3;
+}
+
+.createCard .card .form-control {
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0px 7px #e2e2e2;
+}
+
+.createCard .card .workerBlock {
+  border: none;
+  border-radius: 0;
+}
+
+.createCard .card .addWorker {
+  border-radius: 0;
+  border: none;
+  background: #9ba4b4 !important;
+}
+
+.createCard .card textarea {
+  resize: none;
+}
+
+.createCard .card label {
+  font-weight: 500;
+  color: #646464;
+}
+
+.createCard .createBtn {
+  padding: 10px;
+  border-radius: 0;
+  border: none;
+  background: #9ba4b4 !important;
 }
