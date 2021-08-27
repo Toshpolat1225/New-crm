@@ -1,13 +1,12 @@
 <!-- Default box -->
 
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Projects</h3>
+<div class="card projectCard">
+  <div class="card-header cardHeader">
   </div>
   <div class="card-body p-0">
     <table class="table table-striped projects">
       <thead>
-        <tr>
+        <tr class="projectItem">
           <th style="width: 1%">
             #
           </th>
@@ -28,18 +27,18 @@
         </tr>
       </thead>
       {{#each projects}}
-        <tbody>
-          <tr>
+        <tbody class="projectTbody">
+          <tr class="projectItem">
             <td class="trNumber">
               #
             </td>
-            <td>
+            <td class="projectTitle">
               <a>
                 {{name}}
               </a>
               <br />
               <small>
-                Created - 
+                Created -
                 <span>{{date}}</span>
               </small>
             </td>
@@ -63,7 +62,7 @@
             <td class="project_progress">
               <div class="progress progress-sm">
                 <div
-                  class="progress-bar bg-green"
+                  class="progress-bar progressBar"
                   role="progressbar"
                   aria-valuenow="{{progress}}"
                   aria-valuemin="0"
@@ -74,8 +73,8 @@
               </div>
               <small>
                 <div class="projectTime">
-                    {{!-- ================= --}}
-                       <div id="timer_wrap">
+                  {{! ================= }}
+                  <div id="timer_wrap">
                     <div id="clock">
                       <div id="day">
                         <p id="day0" class="clockText"></p>
@@ -105,93 +104,90 @@
                     </div>
                   </div>
 
-
-
-
-
-                    {{!-- ================= --}}
+                  {{! ================= }}
 
                 </div>
               </small>
             </td>
-            <td class="project-state d-flex" style="flex-direction: column;">
+            <td
+              class="project-state d-flex"
+              style="flex-direction: column; align-items: center;"
+            >
 
-              <span class="badge badge-{{status.color}}">{{status.status}}</span>
-              <small>d. - <span class="project_deadline1">{{deadline}}</span></small>
+              <span class="badge badge{{status.color}}"></span>
+              <small class="projectDeadlineText">D -
+                <span class="project_deadline1">{{deadline}}</span></small>
             </td>
             <td class="project-actions text-right">
-              <a class="btn btn-primary btn-sm" href="/projects/view/{{id}}">
-                <i class="fas fa-folder">
+              <a class="viewIcon projectIcons" href="/projects/view/{{id}}">
+                <i class="fal fa-folder-open">
                 </i>
-                View
               </a>
-             {{#iftr @root.isadmin @root.ismanager}}
-              <a class="btn btn-info btn-sm" href="/projects/edit/{{id}}">
-                <i class="fas fa-pencil-alt">
-                </i>
-                Edit
-              </a>
-              {{! modal }}
-              <div
-                class="modal fade"
-                id="as{{id}}"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Delete
-                        project</h5>
-                      <button
-                        style="border: none; background: none;"
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ><svg
-                          class="removeWorker"
-                          stroke="currentColor"
-                          fill="currentColor"
-                          stroke-width="0"
-                          version="1.1"
-                          viewBox="0 0 16 16"
-                          height="1em"
-                          width="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        ><path
+              {{#iftr @root.isadmin @root.ismanager}}
+                <a class="editIcon projectIcons" href="/projects/edit/{{id}}">
+                  <i class="fal fa-pencil-alt">
+                  </i>
+                </a>
+                {{! modal }}
+                <div
+                  class="modal fade"
+                  id="as{{id}}"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete
+                          project</h5>
+                        <button
+                          style="border: none; background: none;"
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ><svg
                             class="removeWorker"
-                            d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"
-                          ></path></svg></button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                      You definitely want to delete this project !
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >Close</button>
-                      <a
-                        href="/projects/delete/{{id}}"
-                        class="btn btn-danger"
-                      >Delete</a>
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          ><path
+                              class="removeWorker"
+                              d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"
+                            ></path></svg></button>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        You definitely want to delete this project !
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >Close</button>
+                        <a
+                          href="/projects/delete/{{id}}"
+                          class="btn btn-danger"
+                        >Delete</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              {{! modal }}
-              <a
-                class="btn btn-danger btn-sm"
-                data-bs-toggle="modal"
-                data-bs-target="#as{{id}}"
-              >
-                <i class="fas fa-trash">
-                </i>
-                Delete
-              </a>
+                {{! modal }}
+                <a
+                  class="deleteIcon projectIcons"
+                  data-bs-toggle="modal"
+                  data-bs-target="#as{{id}}"
+                >
+                  <i class="fal fa-trash-alt">
+                  </i>
+                </a>
               {{/iftr}}
             </td>
           </tr>

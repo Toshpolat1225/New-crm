@@ -140,6 +140,7 @@ svg.removeWorker {
   height: auto;
   position: relative;
   display: block;
+  font-weight: 500;
 }
 
 .clockText {
@@ -155,6 +156,7 @@ svg.removeWorker {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
 }
 
 #sec1,
@@ -162,6 +164,7 @@ svg.removeWorker {
 #hour1,
 #day1 {
   margin-left: 8px;
+  font-weight: 500;
 }
 
 #timer_wrap {
@@ -169,6 +172,7 @@ svg.removeWorker {
   height: 30px;
   display: flex;
   justify-content: center;
+  font-weight: 500;
 }
 
 #clock {
@@ -176,12 +180,13 @@ svg.removeWorker {
   background: url(clock.jpg) left top no-repeat;
   padding: 0px 10px 0px 10px;
   position: absolute;
+  font-weight: 500;
 }
 
 #razd {
   float: left;
   color: #6c757d !important;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
   margin: 0px 0px 0px 2px;
   padding-bottom: 2px;
@@ -198,6 +203,7 @@ svg.removeWorker {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
 }
 
 /* clock============================ */

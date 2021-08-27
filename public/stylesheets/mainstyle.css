@@ -79,10 +79,12 @@ body {
 .asideMenu .nav-item .nav-link {
   color: #cfd3ce;
   font-size: 15px;
+  opacity: 0.7;
   transition: 0.2s;
 }
 
 .asideMenu .nav-item:hover .nav-link {
+  opacity: 0.9;
   color: #fff;
 }
 
@@ -108,7 +110,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.worker_ava{
+.worker_ava {
   position: relative;
   width: 40px;
   height: 40px;
@@ -117,8 +119,95 @@ body {
   overflow: hidden;
 }
 
-.worker__img{
+.worker__img {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.projectContent {
+  padding: 0 1.5rem !important;
+}
+
+.projectCard {
+  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+  border-radius: 0;
+}
+
+.projectCard .projectItem,
+.projectCard .cardHeader {
+  background: #fff !important;
+}
+
+.projectCard .projectTbody {
+  border-top: 1px solid #dee2e6;
+}
+
+.projectItem th {
+  border-bottom: 1px solid #dee2e6 !important;
+  color: #374045;
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+.projectCard .projectTbody td,
+th {
+  border-top: none !important;
+}
+
+.projectCard .projectTbody .progressBar {
+  background: #787a91;
+}
+
+.projectCard .projectTbody .badgesuccess {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #17b794;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.projectCard .projectTbody .badgeprimary {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #185adb;
+  opacity: 0.9;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.projectCard .projectTbody .badgedanger {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ff2626;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.projectCard .projectTbody .project_progress {
+}
+
+.projectCard .projectTbody .projectDeadlineText {
+  opacity: 0.75;
+}
+
+.projectCard .projectTbody .projectIcons {
+  margin-right: 17px;
+  font-size: 17px;
+  color: #082032;
+  opacity: 0.9;
+}
+
+.projectCard .projectTbody .projectIcons.deleteIcon {
+  cursor: pointer;
+}
+
+.projectCard .projectTbody .projectTitle {
+  color: #423f3e;
+  opacity: 0.9;
+}
+
+.projectCard .cardHeader {
+  padding-bottom: 0;
 }
