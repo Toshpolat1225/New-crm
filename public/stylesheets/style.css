@@ -104,6 +104,8 @@ svg.removeWorker {
 
 .about_text {
   max-width: 300px;
+  max-height: 60px;
+  overflow: hidden;
 }
 
 .worker_avatar {

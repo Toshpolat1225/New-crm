@@ -337,3 +337,32 @@ th {
   color: #5c6e91;
   font-weight: 500;
 }
+
+
+/*  =========================== person page====================== */
+
+.worker_pic{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 23px;
+}
+
+.worker_pic_ava{
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.worker_contacts{
+  border: 1px solid #dedede;
+  padding: 20px 30px;
+}
+
+.worker_text{
+  max-height: 640px;
+  overflow: scroll;
+
+}
