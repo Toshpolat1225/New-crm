@@ -132,7 +132,8 @@ svg.removeWorker {
 }
 
 .card_header {
-  background-color: rgba(0, 0, 0, 0.03) !important;
+  background-color: rgba(0, 0, 0, 0.03);
+  
 }
 
 /* clock============================ */

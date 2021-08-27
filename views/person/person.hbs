@@ -3,24 +3,27 @@
      <div class="col-12">
 
             <!-- Profile Image -->
-            <div class="card card-primary">
-                <div class="card-header">
+            <div class="card  person_profile">
+                <div class="card-header cardHeader">
                 <h3 class="card-title">Personal page</h3>
               </div>    
               <div class="card-body box-profile">
               <div class="row d-flex  justify-content-center ">
-                  <div class="col-5 d-flex justify-content-center flex-column align-items-center">
-                       <div class="text-center">
-                        <h3 class="profile-username text-center">{{worker.fullname}}</h3>
-                        <p class="text-muted text-center">{{worker.job}}</p>
-                        </div>
+                  <div class="col-5 d-flex flex-column justify-content-center ">
+                       <div class="user_worker d-flex align-items-center">
+                        
                         <div class="worker_pic">
                           <img class="worker_pic_ava "
                              src="/images/{{worker.avatar}}"
                             alt="User profile picture">
                      </div>
+                      <div class="text-center" style="margin-left: 30px;">
+                        <h3 class="profile-username text-center" style="font-weight: 500; color: #646464;font-size:30px ;">{{worker.fullname}}</h3>
+                        <p class="text-muted text-center">{{worker.job}}</p>
+                        </div>
+                       </div>
                      <div class="worker_about_per">
-                          <h4 class="worker_info_title">About</h4>
+                          <h4 class="worker_info_title" style=" font-size: 20px;font-weight: 500; color: #646464;">About</h4>
 
                          <p class="text-muted worker_text">{{worker.about}}</p>
                      </div>
@@ -29,20 +32,20 @@
 
                 <div class="col-6">
                      <div class="worker_contacts">
-                           <strong><i class="fab fa-telegram-plane mr-1"></i> Telegram link</strong>
+                           <span class="worker_info_span" ><i class="fab fa-telegram-plane mr-1"></i> Telegram link</span>
 
-                <p  class="text-muted"><a href="{{worker.telegram}}">{{worker.telegram}}</a></p>
+                <p  class="text-muted"><a style="color: cadetblue;" href="{{worker.telegram}}">{{worker.telegram}}</a></p>
 
-                <strong><i class="fas fa-phone mr-1"></i> Phone number</strong>
+                <span class="worker_info_span"><i class="fas fa-phone mr-1"></i> Phone number</span>
 
                 <p class="text-muted">+998{{worker.phone}}</p>
 
 
-                <strong><i class="fas fa-user-tag mr-1"></i>Status</strong>
+                <span class="worker_info_span"><i class="fas fa-user-tag mr-1"></i>Status</span>
 
                 <p class="text-muted">{{worker.status}}</p> 
                 <hr>
-                  <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                  <span class="worker_info_span"><i class="fas fa-book mr-1"></i> Education</span>
 
                 <p class="text-muted">
                   {{worker.education}}
@@ -50,19 +53,19 @@
 
                 <hr>
 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
+                <span class="worker_info_span"><i class="fas fa-map-marker-alt mr-1"></i> Address</span>
 
                 <p class="text-muted">{{worker.address}}</p>
 
                 <hr>
 
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                <span class="worker_info_span"><i class="fas fa-pencil-alt mr-1"></i> Skills</span>
 
                 <p class="text-muted">
                  {{worker.skills}}
                 </p>
                 <hr>
-                    <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+                    <span class="worker_info_span"><i class="far fa-file-alt mr-1"></i> Notes</span>
 
                 <p class="text-muted">{{worker.notes}}</p>
 

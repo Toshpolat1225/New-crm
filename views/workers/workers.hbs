@@ -1,138 +1,90 @@
 {{#if workers.length}}
-  <div class="card card-solid">
-    <div class="card-body">
-      <div class="row" style="overflow-y: scroll; max-height: 900px">
-        {{#each workers}}
+<div class="worker_all">
+  <div class="card-body">
+    <div class="row" >
+      {{#each workers}}
 
-          <div
-            class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column"
-          >
-            {{! modal }}
-            <div
-              class="modal fade"
-              id="as{{id}}"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete worker</h5>
-                    <button
-                      style="border: none; background: none;"
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ><i
-                        class="fal fa-times removeWorker"
-                        style="font-size: 22px;"
-                      ></i></button>
-                  </div>
-                  <div class="modal-body" style="text-align: center;">
-                    You definitely want to delete this worker !
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >Close</button>
-                    <a
-                      href="/workers/remove/{{id}}"
-                      class="btn btn-danger"
-                    >Delete</a>
-                  </div>
-                </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+        {{! modal }}
+        <div class="modal fade" id="as{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete worker</h5>
+                <button style="border: none; background: none;" type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"><i class="fal fa-times removeWorker" style="font-size: 22px;"></i></button>
+              </div>
+              <div class="modal-body" style="text-align: center;">
+                You definitely want to delete this worker !
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/workers/remove/{{id}}" class="btn btn-danger">Delete</a>
               </div>
             </div>
-            {{! modal }}
-            <div class="card bg-light d-flex flex-column">
-              <div
-                class="card-header text-muted card_header border-bottom-0 d-flex"
-              >
-                {{job}}
-                {{! edit and delete icons }}
-                {{#if @root.isadmin}}
-                  <div
-                    class="action__icons"
-                    style="display: flex;align-items: center;"
-                  >
-                    <a class="worker__edit" href="/workers/edit/{{id}}"><i
-                        style="color: #374045; font-size: 18px; display: inline-flex; align-items: center;"
-                        class="fal fa-edit"
-                      ></i></a>
+          </div>
+        </div>
+        {{! modal }}
+        <div class="card d-flex flex-column worker_each">
+          <div class="card-header  card_header border-bottom-0 d-flex">
+            {{job}}
+            {{! edit and delete icons }}
+            {{#if @root.isadmin}}
+            <div class="action__icons" style="display: flex;align-items: center;">
+              <a class="worker__edit" href="/workers/edit/{{id}}"><i
+                  style="color: #374045; font-size: 18px; display: inline-flex; align-items: center;"
+                  class="fal fa-edit"></i></a>
 
-                    <button
-                      style="border: none; background: transparent;"
-                      class="worker__remove"
-                      data-bs-toggle="modal"
-                      data-bs-target="#as{{id}}"
-                    ><i
-                        style="font-size: 24px; color: #F05454; margin-left: 8px; margin-top: 3px;"
-                        class="fal fa-times"
-                      ></i></button>
-                  </div>
-                {{/if}}
+              <button style="border: none; background: transparent;" class="worker__remove" data-bs-toggle="modal"
+                data-bs-target="#as{{id}}"><i
+                  style="font-size: 24px; color: #F05454; margin-left: 8px; margin-top: 3px;"
+                  class="fal fa-times"></i></button>
+            </div>
+            {{/if}}
 
+          </div>
+          <div class="card-body pt-0">
+            <div class="row">
+              <div class="col-7">
+                <h2 class="lead worker__fullname"><b>{{fullname}}</b></h2>
+                <p class="text-muted about_text text-sm "><b>Status:
+                  </b>{{status}}</p>
+                <ul class="ml-4 mb-0 fa-ul text-muted">
+                  <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
+                    Address:
+                    {{address}}</li>
+                  <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>
+                    Phone #: +998{{phone}}</li>
+                </ul>
               </div>
-              <div class="card-body pt-0">
-                <div class="row">
-                  <div class="col-7">
-                    <h2 class="lead worker__fullname"><b>{{fullname}}</b></h2>
-                    <p class="text-muted about_text text-sm "><b>Status:
-                      </b>{{status}}</p>
-                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                      <li class="small"><span class="fa-li"><i
-                            class="fas fa-lg fa-building"
-                          ></i></span>
-                        Address:
-                        {{address}}</li>
-                      <li class="small"><span class="fa-li"><i
-                            class="fas fa-lg fa-phone"
-                          ></i></span>
-                        Phone #: +998{{phone}}</li>
-                    </ul>
-                  </div>
-                  <div
-                    class="col-5 d-flex justify-content-center align-items-center"
-                  >
-                    <div class="worker_avatar">
-                      <img
-                        src="/images/{{avatar}}"
-                        alt="user-avatar"
-                        class="img-fluid"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="text-right">
-                  <a
-                    href="{{telegram}}"
-                    target="_blank"
-                    class="btn btn-sm bg-teal"
-                  >
-                    <i class="fas fa-comments"></i>
-                  </a>
-                  <a href="/workers/{{id}}" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i>
-                    View Profile
-                  </a>
+              <div class="col-5 d-flex justify-content-center align-items-center">
+                <div class="worker_avatar mt-4">
+                  <img src="/images/{{avatar}}" alt="user-avatar" class="img-fluid" />
                 </div>
               </div>
             </div>
           </div>
-
-        {{/each}}
+          <div class="card-footer">
+            <div class="text-right">
+              <a href="{{telegram}}" target="_blank" class="tg_btn" style="margin-right: 20px;">
+                <i class="fal fa-comments"></i>
+              </a>
+              <a href="/workers/{{id}} "class="view_btn">
+                <i class="fal fa-user"></i>
+               
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- /.card-body -->
 
-    <!-- /.card-footer -->
+      {{/each}}
+    </div>
   </div>
+  <!-- /.card-body -->
+
+  <!-- /.card-footer -->
+</div>
 {{else}}
-  <p class="no_workers">There is not any workers!!!</p>
+<p class="no_workers">There is not any workers!!!</p>
 {{/if}}
