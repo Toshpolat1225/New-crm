@@ -80,6 +80,7 @@ app.use(async (req, res, next) => {
     res.locals.user = {
       fullname: res.locals.user.name,
       avatar: res.locals.user.avatar,
+      _id: res.locals.user._id
     };
   }
   req.worker = req.session.worker;

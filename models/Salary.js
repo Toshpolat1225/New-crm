@@ -18,8 +18,10 @@ const salarySchema =new Schema({
          type: String,
          required: true
      },
-     userid: {
+     userId: {
         type: Schema.Types.ObjectId, 
+        ref: 'worker',
+        required: true
      } 
       
 

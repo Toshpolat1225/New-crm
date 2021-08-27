@@ -4,9 +4,15 @@
         <form action="/salary/worker/add" method="POST">
             <div class="card-body">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required />
-                </div>
+           
+            <label for="inputProjectLeader">Worker</label>
+            <select id="inputProjectLeader" class="form-control custom-select" name="userId" required>
+              {{#each workers}}
+              <option value="{{id}}">{{fullname}}</option>
+              {{/each}}
+            </select>
+
+          </div>
                 <div class="form-group">
                     <label for="price">Salary price</label>
                     <input type="number" class="form-control" id="price" name="price" required />

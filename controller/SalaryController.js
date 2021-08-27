@@ -1,53 +1,63 @@
 const Salary = require('../models/Salary')
 const mongoose = require("mongoose");
+const Worker = require('../models/workers');
+const isAdmin = require('../middleware/isAdmin');
 
 
 // ============================================Salary router start ===============================================================
 
 module.exports.addSalary = async (req, res) => {
   const salary = await Salary.findOne();
+  const workers = await Worker.find()
   res.render("salary/salary-add", {
     title: "salary add",
-    salary,
+    workers
   })
 
 };
 module.exports.getWorkerSalary = async (req, res) => {
-  const salary = await Salary.find()
+  const user = res.locals.user
+  if(user.status){
+    ifAdmin = true
+  }
+  else{
+    ifAdmin = false
+  }
+  console.log(user);
+  let salary = await Salary.find()
+   salary =  salary.filter(c=> c.userId.toString() === user._id.toString())
+   salary = salary[0]
+  console.log(salary);
   res.render('salary/workerSalary', {
     title: 'Worker',
-    salary
+    salary,
+    ifAdmin
   })
 }
-module.exports.WorkerSalaryPost = async (req, res) => {
-  const { date, dateOld, price, name } = req.body
-  const salary = new Salary({
-    date,
-    dateOld,
-    price,
-    name
-  })
-  await salary.save()
-  res.redirect('/salary/worker')
-}
+
 module.exports.getSalary = async (req, res) => {
   const salary = await Salary.find();
   res.render("salary/salary", {
     title: "Salary view",
     salary,
   });
-};
-module.exports.creatSalary = (req, res) => {
+}; 
+module.exports.creatSalary = async(req, res) => {
+  const workers = await Worker.find()
   res.render("salary/salary-add", {
     title: "salary",
+    workers
   });
 };
 module.exports.creatSalaryPost = async (req, res) => {
-  const { date, dateOld, price, name } = req.body;
+  const { date, dateOld, price, userId } = req.body;
+  const user = await  Worker.findById(userId.toString())
+  const name = user.fullname
   const salary = new Salary({
     date,
     dateOld,
     price,
+    userId,
     name
   });
   await salary.save();
@@ -60,7 +70,7 @@ module.exports.editSalary = async (req, res) => {
     salary,
   });
 };
-
+ 
 module.exports.editSalaryPost = async (req, res) => {
   const { date, dateOld, price, name } = req.body;
   const newSalary = {
