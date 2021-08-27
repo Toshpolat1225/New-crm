@@ -1,20 +1,36 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
+<nav
+  class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between"
+>
   <!-- Left navbar links -->
   <ul class="navbar-nav navbarNav">
     <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fal fa-bars navBars"></i></a>
+      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+          class="fal fa-bars navBars"
+        ></i></a>
     </li>
     <li class="nav-item navItem d-none d-sm-inline-block">
-      <i class="fal fa-calendar-alt" style="font-size: 22px; margin: 0 10px;"></i>
-      <span style="font-size: 20px;" class=" logoDate font-weight-light"></span>
+      <i
+        class="fal fa-calendar-alt"
+        style="font-size: 22px; margin: 0 10px;color: #082032;opacity: .9;"
+      ></i>
+      <span
+        style="font-size: 20px;color:#082032;opacity: .9;"
+        class="logoDate font-weight-light"
+      ></span>
     </li>
     <li class="nav-item navItem d-none d-sm-inline-block">
-      <i class="fal fa-clock" style="font-size: 22px; margin: 0 10px;"></i>
-      <span style="font-size: 20px;" class=" logoTime font-weight-light"></span>
+      <i
+        class="fal fa-clock"
+        style="font-size: 22px; margin: 0 10px;color: #082032;opacity: .9;"
+      ></i>
+      <span
+        style="font-size: 20px;  color: #082032; opacity: .9;"
+        class="logoTime font-weight-light"
+      ></span>
     </li>
   </ul>
   <ul class="navbar-nav navbarNav">
-     <div class="user-panel d-flex">
+    <div class="user-panel d-flex">
       <div class="image">
         <img
           src="/images/{{user.avatar}}"
@@ -24,10 +40,9 @@
         />
       </div>
       <div class="info">
-        <p  class="d-block mb-0   " id="admin_name">{{user.fullname}}</p>
+        <p class="d-block mb-0" id="admin_name">{{user.fullname}}</p>
       </div>
     </div>
   </ul>
 
-  
 </nav>

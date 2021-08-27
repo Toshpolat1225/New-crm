@@ -150,7 +150,7 @@ svg.removeWorker {
   height: auto;
   float: left;
   color: #6c757d !important;
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: bold;
   position: absolute;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -176,6 +176,7 @@ svg.removeWorker {
 }
 
 #clock {
+  margin-top: 10px;
   height: auto;
   background: url(clock.jpg) left top no-repeat;
   padding: 0px 10px 0px 10px;
@@ -187,7 +188,7 @@ svg.removeWorker {
   float: left;
   color: #6c757d !important;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14.5px;
   margin: 0px 0px 0px 2px;
   padding-bottom: 2px;
 }
