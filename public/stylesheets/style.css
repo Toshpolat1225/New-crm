@@ -2,6 +2,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+::selection {
+  background: #787a91;
+  color: #ffffff;
+}
+
 .auth-buttons {
   width: 100% !important;
 }
@@ -161,7 +166,7 @@ svg.removeWorker {
 #hour1,
 #day1 {
   margin-left: 8px;
-  font-weight: 700 !important;  
+  font-weight: 700 !important;
 }
 
 #timer_wrap {

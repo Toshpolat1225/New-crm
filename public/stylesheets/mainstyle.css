@@ -81,10 +81,11 @@ body {
   font-size: 15px;
   opacity: 0.7;
   transition: 0.2s;
+  font-weight: 300;
 }
 
 .asideMenu .nav-item:hover .nav-link {
-  opacity: 0.9;
+  opacity: 1;
   color: #fff;
 }
 
@@ -117,6 +118,11 @@ body {
   display: block;
   border-radius: 100%;
   overflow: hidden;
+  box-shadow: 0 0px 7px #5c6e91;
+}
+
+h1 {
+  color: #555;
 }
 
 .worker__img {
@@ -264,20 +270,70 @@ th {
   background: #f9f9f9;
   border-radius: 0;
   border: none;
+  box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 10px rgb(0 0 0 / 20%);
 }
 
 .viewProjectCard .cardHeader {
-  background: transparent;
+  background: #787a91;
+  border-radius: 0;
+  border: none;
+  color: #fff;
+  opacity: 0.9;
 }
 
 .viewProjectCard .infoBox {
   background: #fff;
   border: none;
   border-radius: 0;
-  box-shadow: 0 0px 7px #e2e2e2;
+  box-shadow: 0 0px 10px #e2e2e2;
 }
 
 .viewProjectCard .infoBox span {
   color: #646464;
   opacity: 0.9;
+}
+
+.viewProjectCard .viewCol .text {
+  color: #555555;
+}
+
+.viewProjectCard .viewCol p {
+  color: #5c6e91 !important;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.94;
+}
+
+.viewProjectCard .viewCol p b {
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555 !important;
+}
+
+.viewProjectCard .viewCol p a {
+  color: #5664d2;
+  opacity: 0.8;
+  transition: 0.1s;
+}
+
+.viewProjectCard .viewCol p a:hover {
+  opacity: 1;
+}
+
+.viewProjectCard .username {
+  color: #5c6e91;
+  font-weight: 400;
+}
+
+.mainFooter,
+.mainFooter strong {
+  font-size: 14px;
+  color: #555555;
+  font-weight: 400;
+}
+
+.mainFooter strong a {
+  color: #5c6e91;
+  font-weight: 500;
 }
