@@ -22,6 +22,7 @@ const traineesRouter = require("./routes/trainees/trainees-projects");
 const lidsRouter = require("./routes/lids/lids");
 const salaryRouter = require("./routes/salary/salary");
 const priceRouter = require("./routes/price/price");
+const personRouter = require('./routes/person/person')
 const store = new MongoDbStore({
   uri: MONGODB_URI,
   collection: "session",
@@ -117,6 +118,7 @@ app.use("/trainees", isAdmin, traineesRouter);
 app.use("/lids", isAdmin, lidsRouter);
 app.use("/salary", isAdmin, salaryRouter);
 app.use("/price", isAdmin, priceRouter);
+app.use("/person", isAdmin, personRouter);
 
 const PORT = process.env.PORT || 3000;
 
