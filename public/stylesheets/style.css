@@ -471,6 +471,8 @@ ul {
   text-align: start;
   font-weight: 500;
   font-size: 18px;
+  color: #374045;
+  opacity: 0.8;
 }
 
 .tr_num {

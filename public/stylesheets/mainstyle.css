@@ -434,11 +434,7 @@ th {
   font-weight: 500;
 }
 
-
-
-
 /*  ======================== salary page ======================== */
-
 
 .customSelect {
   display: block;
@@ -457,9 +453,14 @@ th {
 
 .salary-table {
   font-family: "Roboto", sans-serif !important;
-  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+  box-shadow: 0 0px 15px #ccc;
   border-radius: 0;
+}
 
+.salary-table thead th {
+  border-bottom: none;
+  color: #374045;
+  opacity: 0.8;
 }
 
 .salary-Tmargin {
@@ -485,14 +486,14 @@ th {
 .salary-btn {
   background: transparent !important;
   border: none;
-  color: #423f3e;
+  color: #787a91;
   opacity: 0.9;
 }
 
 .salary-btn:hover {
   background: transparent !important;
   border: none;
-  color: #423f3e;
+  color: #787a91;
   opacity: 0.9;
 }
 
@@ -515,10 +516,8 @@ th {
 
 .salary-card-secendary {
   background: #f9f9f9 !important;
-  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 0px 10px rgb(0 0 0 / 20%);
+  box-shadow: 0 0 15px #ccc;
   border-radius: 0;
-
-
 }
 
 .salary-card-title {
@@ -530,14 +529,12 @@ th {
   float: left;
 
   margin-bottom: 25px;
-
 }
 
 .salary-card-title h3 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 400;
-
 }
 
 .salary-label {
@@ -545,13 +542,12 @@ th {
   color: #646464;
 }
 
-
 .salary-card-secendary .card-header {
   background: #787a91 !important;
   padding: 10px;
 }
 
-.salary-card-secendary:not(.card-outline)>.card-header {
+.salary-card-secendary:not(.card-outline) > .card-header {
   background-color: #6c757d;
 }
 
@@ -575,5 +571,3 @@ th {
   background: #787a91 !important;
   font-weight: 400 !important;
 }
-
-
