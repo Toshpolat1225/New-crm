@@ -1,34 +1,45 @@
 <section class="content">
     <div class="card card-solid ">
-        <div class="card-body pb-0">
-            {{> lids}}
+        <div class="card-body pb-0 lidBackground">
+            <div class="lidsMenu">
+                {{> lids}}
+            </div>
             {{#if lidds.length}}
             <div class="row">
                 {{#each lidds}}
-                <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column">
-                    <div class="card bg-light d-flex flex-fill">
-                        <div class="card-body pt-0">
+                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill worker_each">
+                        <div style="position: relative;" class="card-header text-muted lidsCardNavbarColor border-bottom-0">
+                                <h2>{{categoryId.name}}</h2>
+                                {{#iftr @root.isadmin @root.ismanager}}
+                                <div class="action__icons" style="display: flex;align-items: center;">
+                                    <a class="worker__edit" href="/lids/edit/{{id}}"><i style=" font-size: 19px; display: inline-flex; align-items: center;" class="fal fa-edit"></i></a>
+                                    <a class="worker__edit ml-2" href="/lids/delete/{{id}}"> <i style="font-size: 24px; margin-left: 8px; margin-top: 3px;" class="fal fa-times"></i> </a>
+                                </div>
+                                {{/iftr}}
+                        </div>
+                        <div class="card-body lidsCardBodyColor pt-0">
                             <div class="row">
-                                <div class="col-7" style="margin-top: 10px;">
-                                    <h2 class="lead"><b>{{name}}</b></h2>
+                                <div class="col-12">
+                                    <h2 class="lead lidCardName"><b>{{name}}</b></h2>
                                     <p class="text-muted text-sm">{{comment}}</p>
-                                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li class="small"><a href="tel:{{num1}}"><span class="fa-li"><i
-                                                        class="fas fa-lg fa-phone"></i></span>{{num1}}</a></li>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted lidPhoneCall">
+                                        <li class="small"><a style="color: #646464" href="tel:{{num1}}"><span class="fa-li"><i
+                                                        class="fas fa-lg fa-phone"></i></span class="lidPhoneNum">{{num1}}</a></li>
                                     </ul>
                                 </div>
                                 
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="text-right">
-                                <a href="/lids/{{id}}" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> More Information
+                        <div class="card-footer lidsCardBodyColor d-flex justify-content-end">
+                            <div class="text-align right">
+                                <a href="/lids/{{id}}" >
+                                    <i class="fal fa-angle-right lidMoreIcon"></i>
                                 </a>
                             </div>
                         </div>
+                        </div>
                     </div>
-                </div>
                 {{/each}}
             </div>
             {{else}}

@@ -26,6 +26,10 @@ router.get('/editCategory/:id',adminMan, async(req,res)=>{
         category
     })
 })
+router.get('/deleteCategory/:id',adminMan, async(req,res)=>{
+    await LidCategory.findByIdAndDelete(req.params.id);
+   res.redirect("/lids/lidCategory");
+})
 router.get("/edit/:id",adminMan, LidController.editLidsGet)
 router.post("/edit/:id",adminMan, LidController.editLidsPost)
 router.get("/delete/:id",adminMan, LidController.deleteLidsGet)

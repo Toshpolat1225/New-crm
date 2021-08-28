@@ -1,43 +1,38 @@
 {{> lids}}
 <section class="content">
     <div class="card card-solid ">
-        <div class="card-body pb-0">
+        <div class="card-body pb-0 lidBackground">
 
             {{#if lidForms.length}}
             <div class="row">
                 {{#each lidForms}}
-                <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column">
-                    <div class="card bg-light d-flex flex-fill">
-                        <div style="position: relative;" class="card-header text-muted border-bottom-0">
+                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill worker_each">
+                        <div style="position: relative;" class="card-header text-muted lidsCardNavbarColor border-bottom-0">
                                 <h2>{{categoryId.name}}</h2>
                                 {{#iftr @root.isadmin @root.ismanager}}
-                                <a style="position: absolute; right:10px; top:0" href="/lids/delete/{{id}}"><i class="fas fa-times"></i></a>
+                                <div class="action__icons" style="display: flex;align-items: center;">
+                                    <a class="worker__edit" href="/lids/edit/{{id}}"><i style=" font-size: 19px; display: inline-flex; align-items: center;" class="fal fa-edit"></i></a>
+                                    <a class="worker__edit ml-2" href="/lids/delete/{{id}}"> <i style="font-size: 24px; margin-left: 8px; margin-top: 3px;" class="fal fa-times"></i> </a>
+                                </div>
                                 {{/iftr}}
                         </div>
-                        <div class="card-body pt-0">
+                        <div class="card-body lidsCardBodyColor pt-0">
                             <div class="row">
-                                <div class="col-7">
-                                    <h2 class="lead"><b>{{name}}</b></h2>
+                                <div class="col-12">
+                                    <h2 class="lead lidCardName"><b>{{name}}</b></h2>
                                     <p class="text-muted text-sm">{{comment}}</p>
-                                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li class="small"><a href="tel:{{num1}}"><span class="fa-li"><i
-                                                        class="fas fa-lg fa-phone"></i></span>{{num1}}</a></li>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted lidPhoneCall">
+                                        <li class="small"><a style="color: #646464" href="tel:{{num1}}"><span class="fa-li"><i
+                                                        class="fas fa-lg fa-phone"></i></span class="lidPhoneNum">{{num1}}</a></li>
                                     </ul>
                                 </div>
-                                
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-between">
-                            {{#iftr @root.isadmin @root.ismanager}}
-                            <div class="text-left ml-0">
-                                <a href="/lids/edit/{{id}}" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> Edit Information
-                                </a>
-                            </div>
-                            {{/iftr}}
-                            <div class="text-right mr-0">
-                                <a href="/lids/{{id}}" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> More Information
+                        <div class="card-footer lidsCardBodyColor d-flex justify-content-end">
+                            <div class="text-align right">
+                                <a href="/lids/{{id}}" >
+                                    <i class="fal fa-angle-right lidMoreIcon"></i>
                                 </a>
                             </div>
                         </div>
@@ -48,11 +43,6 @@
             {{else}}
             <h4 style="margin-top: 30px;">Lids is empty</h4>
             {{/if}}
-
         </div>
-
-
-
     </div>
-
 </section>

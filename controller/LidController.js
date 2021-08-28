@@ -209,6 +209,14 @@ module.exports.todayLidsGet = async (req, res) => {
   const admin = req.session.admin;
   const lidForms = await LidForm.find();
   const lids = await LidCategory.find();
+  await Promise.all(lidForms.map((c) => c.populate("categoryId").execPopulate()));
+  lids.map((c) => {
+    const count = lidForms.filter((k) => {
+      return c.name === k.categoryId.name;
+    });
+    c.count = count.length;
+    return c;
+  });
   const today = lidForms.filter((c) => {
     var date_new = c.date;
     var date_t = new Date(date_new);
@@ -218,20 +226,9 @@ module.exports.todayLidsGet = async (req, res) => {
       return c;
     }
   });
-  res.render("lids/today", {
-    layout: "admin",
-    lids,
-    lidForms,
-    admin,
-    today,
-  });
-};
-//--------------------------- Tomorrow LID GET -----------------------
-module.exports.tomorrowLidsGet = async (req, res) => {
-  const admin = req.session.admin;
-  const lidForms = await LidForm.find();
-  const lids = await LidCategory.find();
+  const todayLength = today.length;
   const tomorrow = lidForms.filter((c) => {
+    // return get_timer(c.date);
     var date_new = c.date;
     var date_t = new Date(date_new);
     var date = new Date();
@@ -240,20 +237,10 @@ module.exports.tomorrowLidsGet = async (req, res) => {
       return c;
     }
   });
-  res.render("lids/tomorrow", {
-    layout: "admin",
-    admin,
-    lids,
-    lidForms,
-    tomorrow,
-  });
-};
-//--------------------------- Fire LID GET -----------------------
-module.exports.fireLidsGet = async (req, res) => {
-  const admin = req.session.admin;
-  const lidForms = await LidForm.find();
-  const lids = await LidCategory.find();
+  
+  const tomorrowLength = tomorrow.length;
   const fire = lidForms.filter((c) => {
+    // return get_timer(c.date);
     var date_new = c.date;
     var date_t = new Date(date_new);
     var date = new Date();
@@ -262,11 +249,129 @@ module.exports.fireLidsGet = async (req, res) => {
       return c;
     }
   });
+  const fireLength = fire.length;
+  res.render("lids/today", {
+    layout: "admin",
+    lids,
+    lidForms,
+    admin,
+    today,
+    todayLength,
+    tomorrowLength,
+    fireLength,
+  });
+};
+//--------------------------- Tomorrow LID GET -----------------------
+module.exports.tomorrowLidsGet = async (req, res) => {
+  const admin = req.session.admin;
+  const lidForms = await LidForm.find();
+  const lids = await LidCategory.find();
+  await Promise.all(lidForms.map((c) => c.populate("categoryId").execPopulate()));
+  lids.map((c) => {
+    const count = lidForms.filter((k) => {
+      return c.name === k.categoryId.name;
+    });
+    c.count = count.length;
+    return c;
+  });
+  const today = lidForms.filter((c) => {
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer > 0 && timer < 24) {
+      return c;
+    }
+  });
+  const todayLength = today.length;
+  const tomorrow = lidForms.filter((c) => {
+    // return get_timer(c.date);
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer > 24 && timer < 48) {
+      return c;
+    }
+  });
+  
+  const tomorrowLength = tomorrow.length;
+  const fire = lidForms.filter((c) => {
+    // return get_timer(c.date);
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer < 0) {
+      return c;
+    }
+  });
+  const fireLength = fire.length;
+  res.render("lids/tomorrow", {
+    layout: "admin",
+    admin,
+    lids,
+    lidForms,
+    tomorrow,
+    todayLength,
+    tomorrowLength,
+    fireLength,
+  });
+};
+//--------------------------- Fire LID GET -----------------------
+module.exports.fireLidsGet = async (req, res) => {
+  const admin = req.session.admin;
+  const lidForms = await LidForm.find();
+  const lids = await LidCategory.find();
+  await Promise.all(lidForms.map((c) => c.populate("categoryId").execPopulate()));
+  lids.map((c) => {
+    const count = lidForms.filter((k) => {
+      return c.name === k.categoryId.name;
+    });
+    c.count = count.length;
+    return c;
+  });
+  const today = lidForms.filter((c) => {
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer > 0 && timer < 24) {
+      return c;
+    }
+  });
+  const todayLength = today.length;
+  const tomorrow = lidForms.filter((c) => {
+    // return get_timer(c.date);
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer > 24 && timer < 48) {
+      return c;
+    }
+  });
+  
+  const tomorrowLength = tomorrow.length;
+  const fire = lidForms.filter((c) => {
+    // return get_timer(c.date);
+    var date_new = c.date;
+    var date_t = new Date(date_new);
+    var date = new Date();
+    var timer = (date_t - date) / 1000 / 3600;
+    if (timer < 0) {
+      return c;
+    }
+  });
+  const fireLength = fire.length;
   res.render("lids/fire", {
     layout: "admin",
     admin,
     lids,
     lidForms,
     fire,
+    todayLength,
+    tomorrowLength,
+    fireLength,
   });
 };

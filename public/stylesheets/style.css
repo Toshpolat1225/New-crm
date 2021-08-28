@@ -155,7 +155,7 @@ svg.removeWorker {
 .card.worker__card select{
   border: none;
   border-radius: 0;
-  box-shadow: 0px 0px 4px 0px #ccc; 
+  box-shadow: 0px 0px 4px 1px #ccc; 
 }
 .card.worker__card .custom-file-label{
   border: none;
@@ -542,4 +542,52 @@ ul {
   align-items: center;
   justify-content: space-between;
   margin-left: 15px !important;
+}
+/* =============================================== Lids */
+.lidsCardBodyColor{
+  background: #f9f9f9;
+  color: #646464;
+}
+.lidsCardNavbarColor{
+  background: #787a91;
+  color: #ffffff !important;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.lidsCardNavbarColor h2{
+  font-size:16px;
+  margin:0;
+}
+.lidCardName{
+  margin-top: 32px;
+  color: #646464;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 9px;
+}
+.lidPhoneCall{
+margin: 15px 0 10px;
+font-size: 20px;
+}
+.lidMoreIcon{
+  font-size: 28px;
+  color: #6c757d!important;
+}
+.card-body::after, .card-footer::after, .card-header::after{
+  display: none !important;
+  content: none !important;
+}
+.lidCategoryedit{
+  color: #646464;
+  font-weight: 500;
+  font-size: 22px;
+}
+.lidsMenu{
+  margin: 10px 0
+}
+.lidBackground{
+  background: #f9f9f9;
+}
+.navbar-badge{
+  color: #504f4f;
 }
