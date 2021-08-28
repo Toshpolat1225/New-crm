@@ -134,6 +134,54 @@ svg.removeWorker {
 .card_header {
   background-color: rgba(0, 0, 0, 0.03);
 }
+.card.worker__card{
+  background: #f9f9f9;
+}
+.worker__card{
+  border-radius: 0;
+}
+.worker__card .worker__card_header{
+  background: #787a91;
+}
+.worker__card_header{
+  border-radius: 0;
+}
+.worker__card .worker__card_header .add__worker_title{
+  font-size: 20px;
+  color: #fff;
+}
+.card.worker__card input,
+.card.worker__card textarea,
+.card.worker__card select{
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 0px 4px 1px #ccc; 
+}
+.card.worker__card .custom-file-label{
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 0px 4px 1px #ccc; 
+  color: #939ba2;
+}
+
+.card.worker__card .custom-file-label::after{
+  height: 100%;
+  border-radius: 0;
+  background: #787a91;
+  color: #fff;
+}
+.add__worker_btn{
+  background: #787a91;
+  color: #fff;
+  border-radius: 0;
+}
+.add__worker_btn:hover{
+  color: #fff;
+}
+
+
+
+
 
 /* clock============================ */
 #hour,

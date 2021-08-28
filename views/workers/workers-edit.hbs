@@ -1,8 +1,10 @@
 
 
 
-          <div class="card card-primary">
-
+          <div class="card worker__card">
+              <div class="card-header worker__card_header">
+              <h3 class="add__worker_title mb-0">Edit worker</h3>
+            </div>
           <div class="card-body">
             
             <form action="/workers/edit" class="d-flex" method="post" enctype="multipart/form-data">
@@ -72,7 +74,7 @@
                    </select>
                </div>
                 <input type="hidden"  class="form-control" value="{{worker.id}}" name="id">
-                  <button class="btn btn-dark" type="submit">Add worker</button>
+                  <button class="btn add__worker_btn  mt-4" type="submit">Submit</button>
              </div>
 
              </form>
@@ -80,3 +82,14 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
+
+
+
+
+
+
+
+
+
+          
+         

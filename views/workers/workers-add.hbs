@@ -1,10 +1,8 @@
-<h1>Add new Worker</h1>
 
-
-
-
-          <div class="card card-primary">
-            
+          <div class="card worker__card">
+            <div class="card-header worker__card_header">
+              <h3 class="add__worker_title mb-0">Add new worker</h3>
+            </div>
           <div class="card-body">
             <form class="d-flex" action="/workers/add" method="post" enctype="multipart/form-data">
 
@@ -22,9 +20,9 @@
                 placeholder="Email"
                 required
               />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+              <div class="input-group-append m-0">
+                <div class="input-group-text" style="border-radius: 0; box-shadow: 0px 0px 4px 1px #ccc; border:none; background: #f9f9f9;" >
+                  <span class="fal fa-envelope" style="color: #646464;"></span>
                 </div>
               </div>
             </div>
@@ -36,9 +34,9 @@
                 placeholder="Password"
                 required
               />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
+              <div class="input-group-append m-0">
+                <div class="input-group-text " style="border-radius: 0; box-shadow: 0px 0px 4px 1px #ccc; border:none; background: #f9f9f9;">
+                  <span class="fal fa-lock"></span>
                 </div>
               </div>
             </div>
@@ -50,9 +48,9 @@
                 placeholder="Retype password"
                 required
               />
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
+              <div class="input-group-append m-0">
+                <div class="input-group-text" style="border-radius: 0; box-shadow: 0px 0px 4px 1px #ccc; border:none; background: #f9f9f9;">
+                  <span class="fal fa-lock"></span>
                 </div>
               </div>
             </div>
@@ -103,7 +101,7 @@
                       <option value="Project manager">Project manager</option>
                    </select>
                </div>
-                  <button class="btn btn-dark" type="submit">Add worker</button>
+                  <button class="btn add__worker_btn mt-4" type="submit">Add worker</button>
                </div>
 
              </form>
