@@ -136,7 +136,7 @@ h1 {
 }
 
 .projectCard {
-  box-shadow: 0 0px 10px #e2e2e2;
+  box-shadow: 0 0px 15px #ccc;
   border-radius: 0;
 }
 
@@ -227,14 +227,20 @@ th {
 .createCard .card {
   border-radius: 0;
   background: #f9f9f9;
-  box-shadow: 0 0px 10px #e3e3e3;
+  box-shadow: 0 0px 15px #ccc;
 }
 
+.createCard .card .text_box input {
+  color: #646464;
+}
+
+.createCard .card .text_box,
 .createCard .card .form-control {
   background: #fff;
   border-radius: 0;
   border: none;
   box-shadow: 0 0px 7px #e2e2e2;
+  color: #646464;
 }
 
 .createCard .card .workerBlock {
@@ -250,6 +256,7 @@ th {
 }
 
 .createCard .card textarea {
+  color: #646464;
   resize: none;
 }
 
@@ -264,6 +271,7 @@ th {
   border: none;
   background: #787a91 !important;
   opacity: 0.9;
+  box-shadow: 0 0px 15px #ccc;
 }
 
 .viewProjectCard {
@@ -338,10 +346,9 @@ th {
   font-weight: 500;
 }
 
-
 /*  =========================== person page====================== */
 
-.worker_pic{
+.worker_pic {
   position: relative;
   width: 150px;
   height: 150px;
@@ -350,68 +357,66 @@ th {
   margin-bottom: 23px;
 }
 
-.worker_pic_ava{
+.worker_pic_ava {
   top: 0;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.worker_contacts{
+.worker_contacts {
   border: 1px solid #dedede;
   padding: 20px 30px;
 }
 
-.worker_text{
+.worker_text {
   max-height: 640px;
   overflow: scroll;
-
 }
-.person_profile .cardHeader{
+.person_profile .cardHeader {
   background: #787a91;
 }
-.card-title{
+.card-title {
   color: #fff;
 }
-.worker_info_span{
- font-weight: 500; 
- color: #646464;
+.worker_info_span {
+  font-weight: 500;
+  color: #646464;
 }
-.user_worker{
+.user_worker {
   border-bottom: 1px solid #dedede;
   margin-bottom: 20px;
 }
-.worker_each .card-header{
+.worker_each .card-header {
   background: #787a91;
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
 }
-.worker_each .worker__fullname{
+.worker_each .worker__fullname {
   color: #646464;
   font-weight: 400;
 }
 
-.worker_each  .tg_btn i{
+.worker_each .tg_btn i {
   color: #787a91;
   font-size: 20px;
 }
-.worker_each  .view_btn i{
+.worker_each .view_btn i {
   color: #787a91;
   font-size: 20px;
 }
 .worker_each .card-header {
   border-radius: 0;
 }
-.worker_each .card-body{
+.worker_each .card-body {
   background: #f9f9f9;
 }
-.worker_each .card-footer{
+.worker_each .card-footer {
   background: #f9f9f9;
 }
 .worker_each {
   box-shadow: 0px 0px 10px #ccc;
 }
-
 
 .action__icons  i{
   color: #fff;
@@ -562,4 +567,5 @@ th {
   background: #787a91 !important;
   font-weight: 400 !important;
 }
+
 

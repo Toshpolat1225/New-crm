@@ -1,13 +1,13 @@
 <div class="row justify-content-center m-0">
-  <div class="col-md-8">
+  <div class="col-12">
     <!-- /.card-header -->
     <div class="card-body ">
       <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
       <div id="accordion">
         {{#if project.length}}
         {{#each project}}
-        <div class="card-t" style="background: #fff; border: none; border-radius: 0;
-        box-shadow: 7px 10px 15px -9px #000;">
+        <div class="card-t" style="background: #f9f9f9; border: none; border-radius: 0;
+        box-shadow: 0 0px 15px #ccc;">
           <div class="card-header cardHeader d-flex align-items-center" style="background: #f9f9f9;">
             <h4 class="card-title w-100">
               <a class="d-block black cardLink collapsed" data-toggle="collapse" href="#a{{id}}" aria-expanded="false">
@@ -17,7 +17,7 @@
             <h3 class="price projectPrice">{{price}}</h3>
             </h4>
             {{#iftr @root.isadmin @root.ismanager}}
-            <a class="priceIcons" style="color: #39A2DB;" href="/price/edit/{{id}}"><i style="color: #505d69;" class="fal fa-edit"></i></a>
+            <a class="priceIcons" style="color: #787a91;" href="/price/edit/{{id}}"><i class="fal fa-edit"></i></a>
             <a class="priceIcons" style="color: #FF4C29;" href="/price/delete/{{id}}"><i
                 class="fal fa-trash-alt"></i></a>
             {{/iftr}}

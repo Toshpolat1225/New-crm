@@ -133,7 +133,6 @@ svg.removeWorker {
 
 .card_header {
   background-color: rgba(0, 0, 0, 0.03);
-  
 }
 
 /* clock============================ */
@@ -346,7 +345,7 @@ ul {
 
 .text_box {
   position: relative;
-  width: 90%;
+  width: 92%;
   background-color: #fff;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -366,7 +365,7 @@ ul {
 }
 
 .formControl {
-  width: 90%;
+  width: 92%;
 }
 
 .box_input {
@@ -374,15 +373,19 @@ ul {
 }
 
 .enter_inp {
-  top: 52.4px;
-  right: 25px;
+  top: 109.5px;
+  right: 13px;
   position: absolute;
   margin-bottom: 0;
   margin-left: 8px;
   padding: 0.205rem 0.65rem;
+  background: transparent !important;
+  color: #787a91 !important;
+  border: none;
 }
 
 .projectPrice {
+  color: #505d69;
   font-size: 18px;
   font-weight: 400 !important;
   margin-right: 15px !important;
