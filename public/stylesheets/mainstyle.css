@@ -199,8 +199,7 @@ th {
 .projectCard .projectTbody .projectIcons {
   margin-right: 17px;
   font-size: 17px;
-  color: #082032;
-  opacity: 0.9;
+  color: #787a91;
 }
 
 .projectCard .projectTbody .projectIcons.deleteIcon {
@@ -253,6 +252,15 @@ th {
   opacity: 0.9;
   border-radius: 0;
   border: none;
+  box-shadow: 0 0px 15px #ccc;
+}
+
+.createCard .card .addWorker1 {
+  background: #787a91 !important;
+  opacity: 0.9;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0px 15px #ccc;
 }
 
 .createCard .card textarea {
@@ -418,10 +426,10 @@ th {
   box-shadow: 0px 0px 10px #ccc;
 }
 
-.action__icons  i{
+.action__icons i {
   color: #fff;
 }
-.name_user{
+.name_user {
   color: #646464;
   font-weight: 500;
 }
