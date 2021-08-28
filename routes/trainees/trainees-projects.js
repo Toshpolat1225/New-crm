@@ -34,6 +34,7 @@ router.get("/", async (req, res) => {
   res.render("trainees/projects", {
     title: "Trainees projects",
     projects,
+    isTrainee
   });
 });
 

@@ -349,4 +349,118 @@
   }
 </script>
 
+<script>
+console.log('asd')
+
+  getLeftDate();
+  function getLeftDate() {
+
+
+    $(document).ready(function () {
+
+      let projectDeadline =
+        document.querySelectorAll(".project_deadline1");
+
+      projectDeadline.forEach(c => {
+        const parent = c.parentNode.parentNode.parentNode
+        const projectTime = parent.querySelector('.project_progress small .projectTime #timer_wrap')
+        console.log(projectTime)
+        function get_timer() {
+          let date_t = new Date(c.innerHTML);
+          let date = new Date();
+          let timer = date_t - date;
+
+          if (date_t > date) {
+            let day = parseInt(timer / (60 * 60 * 1000 * 24));
+            if (day < 10) {
+              day = "0" + day;
+            }
+            day = day.toString();
+            let hour = parseInt(timer / (60 * 60 * 1000)) % 24;
+            if (hour < 10) {
+              hour = "0" + hour;
+            }
+            hour = hour.toString();
+            let min = parseInt(timer / (1000 * 60)) % 60;
+            if (min < 10) {
+              min = "0" + min;
+            }
+            min = min.toString();
+            let sec = parseInt(timer / 1000) % 60;
+            if (sec < 10) {
+              sec = "0" + sec;
+            }
+            sec = sec.toString();
+            if (
+              day[1] == 9 &&
+              hour[0] == 2 &&
+              hour[1] == 3 &&
+              min[0] == 5 &&
+              min[1] == 9 &&
+              sec[0] == 5 &&
+              sec[1] == 9
+            ) {
+              animation(projectTime.querySelector("#day0"), day[0]);
+            } else {
+              projectTime.querySelector("#day0").innerHTML = day[0];
+            }
+            if (
+              hour[0] == 2 &&
+              hour[1] == 3 &&
+              min[0] == 5 &&
+              min[1] == 9 &&
+              sec[0] == 5 &&
+              sec[1] == 9
+            ) {
+              animation(projectTime.querySelector("#day1"), day[1]);
+            } else {
+              projectTime.querySelector("#day1").innerHTML = day[1];
+            }
+            if (
+              hour[1] == 3 &&
+              min[0] == 5 &&
+              min[1] == 9 &&
+              sec[0] == 5 &&
+              sec[1] == 9
+            ) {
+              animation(projectTime.querySelector("#hour0"), hour[0]);
+            } else {
+              projectTime.querySelector("#hour0").innerHTML = hour[0];
+            }
+            if (min[0] == 5 && min[1] == 9 && sec[0] == 5 && sec[1] == 9) {
+              animation(projectTime.querySelector("#hour1"), hour[1]);
+            } else {
+              projectTime.querySelector("#hour1").innerHTML = hour[1];
+            }
+            if (min[1] == 9 && sec[0] == 5 && sec[1] == 9) {
+              animation(projectTime.querySelector("#min0"), min[0]);
+            } else {
+              projectTime.querySelector("#min0").innerHTML = min[0];
+            }
+            if (sec[0] == 5 && sec[1] == 9) {
+              animation(projectTime.querySelector("#min1"), min[1]);
+            } else {
+              projectTime.querySelector("#min1").innerHTML = min[1];
+            }
+            if (sec[1] == 9) {
+              animation(projectTime.querySelector("#sec0"), sec[0]);
+            } else {
+              projectTime.querySelector("#sec0").innerHTML = sec[0];
+            }
+            animation(projectTime.querySelector("#sec1"), sec[1]);
+            setTimeout(get_timer, 1000);
+          } else {
+            projectTime.querySelector("#clock").innerHTML = "<span id='stop'>Ran out of time!</span>";
+          }
+        }
+        function animation(vibor, param) {
+          vibor.innerHTML = param
+        }
+        get_timer();
+      }) 
+
+    });
+  }
+
+</script>
 {{/if}}
