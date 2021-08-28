@@ -4,7 +4,7 @@
     <div class="col-3 mt-3">
         <div class="card libraryborder">
             <a href="/library/{{id}}" class="library__link"><img src="/images/{{img}}" class="card-img-top top" alt="{{name}}">
-                <h5 style="padding: 8px 25px; position: absolute; bottom: 0; left: 0; color: #fff; background: linear-gradient(rgba(197, 197, 197, 0.58 ),rgba(197, 197, 197, 0.58))" class="card-title libraryhref">{{name}}</h5>
+                <h5 style="padding: 8px 25px;width: 100%; position: absolute; bottom: 0; left: 0; color: #fff; background: linear-gradient(rgba(197, 197, 197, 0.58 ),rgba(197, 197, 197, 0.58))" class="card-title libraryhref">{{name}}</h5>
             </a>
             {{#iftr @root.isadmin @root.ismanager}}
                 <a class="card-title left" href="/library/edit/{{id}}"><i class="fal fa-edit editicon"></i></a>
