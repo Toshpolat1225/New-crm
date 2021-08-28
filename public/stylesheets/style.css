@@ -155,7 +155,7 @@ svg.removeWorker {
 .card.worker__card select{
   border: none;
   border-radius: 0;
-  box-shadow: 0px 0px 4px 1px #ccc; 
+  box-shadow: 0px 0px 4px 0px #ccc; 
 }
 .card.worker__card .custom-file-label{
   border: none;
