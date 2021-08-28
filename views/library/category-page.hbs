@@ -9,12 +9,12 @@
       <div class="card-body">
         <h5 class="card-title addlesson">{{name}}</h5>
       </div>
-      {{#iftr @root.isadmin @root.ismanager}}adsasdasasdasd
-      <div class="d-flex justify-content-between p-2">
+      {{#iftr @root.isadmin @root.ismanager}}
+      <div class="d-flex justify-content-between">
         <a class="card-title left1"  href="/lesson/edit/{{_id}}"><i class="fal fa-edit editicon"></i></a>
-        <form action="/lesson/delete/{{_id}}" method="POST">d
+        <form action="/lesson/delete/{{_id}}" method="POST">
           <input type="hidden" name="libraryId" value="{{libraryId}}">
-          <button style="border: none;" class="card-title right1" ><i class="fal fa-trash-alt"></i></button>
+          <button style="border: none; background: transparent;" class="card-title right1" ><i class="fal fa-trash-alt"></i></button>
         </form>
       </div>
       {{/iftr}}
