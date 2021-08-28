@@ -1,7 +1,7 @@
 <div class="createCard">
   <form action="/trainees/edit/{{project.id}}" method="POST">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="card card-secondary">
           <div class="card-header cardHeader">
             <h3 class="card-title">Project</h3>
@@ -45,17 +45,6 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="inputClientCompany">Client Company</label>
-              <input
-                type="text"
-                id="inputClientCompany"
-                class="form-control"
-                required
-                name="company"
-                value="{{project.company}}"
-              />
-            </div>
-            <div class="form-group">
               <label for="inputProjectLeader">Project Leader</label>
               <input
                 type="text"
@@ -83,45 +72,12 @@
         </div>
         <!-- /.card -->
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="card card-secondary">
-          <div class="card-header">
+          <div class="card-header cardHeader">
             <h3 class="card-title">Client</h3>
           </div>
           <div class="card-body">
-            <div class="form-group">
-              <label for="inputName4">Client Name</label>
-              <input
-                type="text"
-                id="inputName4"
-                class="form-control"
-                name="clientName"
-                value="{{project.clientName}}"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputName5">Client phone number</label>
-              <input
-                type="number"
-                id="inputName5"
-                class="form-control"
-                name="clientNumber"
-                value="{{project.clientNumber}}"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputName6">Client location</label>
-              <input
-                type="text"
-                id="inputName6"
-                class="form-control"
-                name="clientLocation"
-                value="{{project.clientLocation}}"
-                required
-              />
-            </div>
             <div class="form-group">
               <label for="inputTelegram">Telegram group</label>
               <input
@@ -133,39 +89,17 @@
                 required
               />
             </div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </div>
-      <div class="col-md-4">
-        <div class="card card-secondary">
-          <div class="card-header">
-            <h3 class="card-title">Budget</h3>
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="inputEstimatedBudget7">Total payment</label>
-              <input
-                type="number"
-                id="inputEstimatedBudget7"
-                class="form-control"
-                name="totalPayment"
-                value="{{project.totalPayment}}"
-                required
-              />
-            </div>
             <button
               type="button"
-              class="btn btn-primary addWorker"
-              id="addWorker"
+              class="btn btn-primary addWorker1"
+              id="addWorker1"
             >add worker</button>
             <div class="cardBody">
               {{#each project.works}}
                 {{#if worker.id}}
-                  <div class="worekerBlock">
-                    <div class="form-group col-6">
-                      <label for="selectGroupR">Minimal</label>
+                  <div class="workerBlock">
+                    <div class="form-group col-10">
+                      <label for="selectGroupR">Student</label>
                       <select
                         id="selectGroupR"
                         class="form-control select2"
@@ -180,17 +114,6 @@
                           <option value="{{id}}">{{fullname}}</option>
                         {{/each}}
                       </select>
-                    </div>
-                    <div class="form-group col-6">
-                      <label for="inputEstimatedBudgetL">Worker payment</label>
-                      <input
-                        type="number"
-                        id="inputEstimatedBudgetL"
-                        class="form-control"
-                        name="workerPayment"
-                        value="{{payment}}"
-                        required
-                      />
                     </div>
                     <div class="crossRow">
                       <p class="removeWorker"><svg
@@ -222,13 +145,14 @@
       </div>
 
     </div>
-    <div class="row mt-3">
+    <div class="row mt-5 pb-5">
       <div class="col-12 d-flex justify-content-center">
         <input type="hidden" name="id" value="{{project.id}}" />
         <input
+          style="width: 100%;"
           type="submit"
           value="Edit this project"
-          class="btn btn-success float-right"
+          class="btn btn-success float-right createBtn"
         />
       </div>
     </div>

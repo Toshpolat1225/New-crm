@@ -2,12 +2,13 @@
 
 <div class="card projectCard">
   <div class="card-header cardHeader">
-    <h3 class="card-title">Trainees projects</h3>
+    <h3 class="card-title" style="color: #374045; margin-bottom: 15px;">Trainees
+      projects</h3>
   </div>
   <div class="card-body p-0">
     <table class="table table-striped projects">
       <thead>
-        <tr>
+        <tr class="projectItem">
           <th style="width: 1%">
             #
           </th>
@@ -48,7 +49,7 @@
                 {{#each works}}
                   {{#if worker}}
                     <li class="list-inline-item">
-                      <a href="/workers/{{worker.id}}">
+                      <a class="worker_ava" href="/workers/{{worker.id}}">
                         <img
                           alt="{{worker.fullname}}"
                           class="worker__img"
@@ -119,12 +120,12 @@
                 <span class="project_deadline1">{{deadline}}</span></small>
             </td>
             <td class="project-actions text-right">
-              <a class="viewIcon projectIcons" href="/projects/view/{{id}}">
+              <a class="viewIcon projectIcons" href="/trainees/view/{{id}}">
                 <i class="fal fa-folder-open">
                 </i>
               </a>
               {{#iftr @root.isadmin @root.ismanager}}
-                <a class="editIcon projectIcons" href="/projects/edit/{{id}}">
+                <a class="editIcon projectIcons" href="/trainees/edit/{{id}}">
                   <i class="fal fa-pencil-alt">
                   </i>
                 </a>
@@ -172,7 +173,7 @@
                           data-bs-dismiss="modal"
                         >Close</button>
                         <a
-                          href="/projects/delete/{{id}}"
+                          href="/trainees/delete/{{id}}"
                           class="btn btn-danger"
                         >Delete</a>
                       </div>
