@@ -412,3 +412,12 @@ th {
   box-shadow: 0px 0px 10px #ccc;
 }
 
+
+.action__icons  i{
+  color: #fff;
+}
+.name_user{
+  color: #646464;
+  font-weight: 500;
+}
+
