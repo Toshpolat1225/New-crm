@@ -3,15 +3,12 @@
     {{#each categories}}
     <div class="col-3 mt-3">
         <div class="card libraryborder">
-            <a href="/library/{{id}}" class="library__link"><img src="/images/{{img}}" class="card-img-top top" alt="{{name}}"></a>
-            <div class="card-body d-flex justify-content-center">
-                <h5 class="card-title libraryhref">{{name}}</h5>
-            </div>
+            <a href="/library/{{id}}" class="library__link"><img src="/images/{{img}}" class="card-img-top top" alt="{{name}}">
+                <h5 style="padding: 8px 25px; position: absolute; bottom: 0; left: 0; color: #fff; background: linear-gradient(rgba(197, 197, 197, 0.58 ),rgba(197, 197, 197, 0.58))" class="card-title libraryhref">{{name}}</h5>
+            </a>
             {{#iftr @root.isadmin @root.ismanager}}
-           
                 <a class="card-title left" href="/library/edit/{{id}}"><i class="fal fa-edit editicon"></i></a>
                 <a class="card-title right"  href="/library/delete/{{id}}"><i class="fal fa-trash-alt"></i></a>
-            
             {{/iftr}}
         </div>
     </div>
