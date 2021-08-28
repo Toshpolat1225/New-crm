@@ -1,0 +1,87 @@
+.card-header.addlesson {
+    background: #787a91 !important;
+    border-radius: 0;
+}
+
+.library-title.choose {
+    font-weight: 500;
+    color: #646464;
+}
+
+.buttonSubmit {
+    background: #787a91 !important;
+    opacity: 0.9;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0px 15px #ccc;
+    color: #fff;
+    text-transform: uppercase;
+    width: 120px;
+    height: 35px;
+}
+
+.card-footer.submit {
+    background: transparent;
+}
+
+.card.card-primary1 {
+    border-radius: 0;
+    background: #f9f9f9;
+    box-shadow: 0 0px 15px #ccc;
+}
+
+.form-control.inp1 {
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0px 7px #e2e2e2;
+    color: #646464;
+}
+
+.card-title.right1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    font-size: 20px;
+    right: 10px;
+    color: #787a91;
+    bottom: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.card-title.left1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    font-size: 20px;
+    left: 10px;
+    color: #787a91;
+    bottom: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.card.editiconpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0px 7px #e2e2e2;
+
+}
+.vidios{
+    width: 100%;
+}
+.custom-file-label.inp1{
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0px 7px #e2e2e2;
+    color: #646464;
+}

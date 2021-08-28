@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
-  <div class="col-md-6 justify-content-center align-items-center mt-4">
+  <div class="col-md-6 justify-content-start align-items-center mt-4">
     <!-- general form elements -->
-    <div class="card card-primary">
+    <div class="card card-primary1">
       <!-- /.card-header -->
       <!-- form start -->
       <form
@@ -11,10 +11,10 @@
       >
         <div class="card-body">
           <div class="form-group">
-            <label for="name">Library</label>
+            <label class="library-title choose" for="name">Library</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control inp1"
               id="name"
               placeholder="Library name"
               name="name"
@@ -23,7 +23,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="img">Library img</label>
+            <label class="library-title choose" for="img">Library img</label>
             <div class="input-group">
               <div class="custom-file">
                 <input
@@ -32,13 +32,13 @@
                   id="img"
                   name="img"
                 />
-                <label class="custom-file-label" for="img">{{category.img}}</label>
+                <label class="custom-file-label inp1" for="img">{{category.img}}</label>
               </div>
             </div>
           </div>
         </div>
-        <div class="card-footer">
-          <button type="submit" class="btn btn-success">Edit</button>
+        <div class="card-footer submit">
+          <button type="submit" class="buttonSubmit">Edit</button>
         </div>
       </form>
     </div>

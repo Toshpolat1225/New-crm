@@ -16,12 +16,10 @@ router.get("/add",adminMan, async (req, res) => {
   });
 });
 
-router.post("/add",adminMan, fileMiddleware.single("img"), async (req, res) => {
-  const img = req.file.filename;
+router.post("/add",adminMan,  async (req, res) => {
   const lesson = new Lesson({
     name: req.body.name,
     url: req.body.url,
-    img,
     libraryId: req.body.libraryId,
   });
   await lesson.save();
@@ -36,17 +34,8 @@ router.get("/edit/:id",adminMan, async (req, res) => {
   });
 });
 
-router.post("/edit/:id",adminMan, fileMiddleware.single("img"), async (req, res) => {
-  const { img } = await Lesson.findById(req.params.id);
+router.post("/edit/:id",adminMan,  async (req, res) => {
   const lesson = req.body;
-
-  if (req.file) {
-    lesson.img = req.file.filename;
-    toDelete(img.img);
-  } else {
-    lesson.img = img;
-  }
-
   await Lesson.findByIdAndUpdate(req.params.id, lesson, (err) => {
     if (err) {
       console.log(err);

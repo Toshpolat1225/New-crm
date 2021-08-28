@@ -1,21 +1,20 @@
 {{#if lessons.length}}
-<div class="row justify-content-center">
+<div class="row justify-content-start">
   {{#each lessons}}
   <div class="col-3">
-    <div class="card">
-      <img src="/images/{{img}}" class="card-img-top" alt="{{name}}">
-      <video controls>
+    <div class="card editiconpage">
+      <video controls class="vidios">
         <source src="{{url}}" />
       </video>
       <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
+        <h5 class="card-title addlesson">{{name}}</h5>
       </div>
-      {{#iftr @root.isadmin @root.ismanager}}
+      {{#iftr @root.isadmin @root.ismanager}}adsasdasasdasd
       <div class="d-flex justify-content-between p-2">
-        <a class="btn btn-primary" href="/lesson/edit/{{_id}}">Edit</a>
-        <form action="/lesson/delete/{{_id}}" method="POST">
+        <a class="card-title left1"  href="/lesson/edit/{{_id}}"><i class="fal fa-edit editicon"></i></a>
+        <form action="/lesson/delete/{{_id}}" method="POST">d
           <input type="hidden" name="libraryId" value="{{libraryId}}">
-          <button class="btn btn-primary">Delete</button>
+          <button style="border: none;" class="card-title right1" ><i class="fal fa-trash-alt"></i></button>
         </form>
       </div>
       {{/iftr}}

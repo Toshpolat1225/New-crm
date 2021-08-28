@@ -116,7 +116,7 @@ router.get("/delete/:id",adminMan, fileMiddleware.single("img"), async (req, res
   const { img } = await Library.findById(req.params.id);
   toDelete(img);
   await Library.findByIdAndDelete(req.params.id);
-  res.redirect("/library/category");
+  res.redirect("/library");
 });
 
 module.exports = router;
