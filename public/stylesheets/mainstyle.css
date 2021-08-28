@@ -433,3 +433,147 @@ th {
   color: #646464;
   font-weight: 500;
 }
+
+
+
+
+/*  ======================== salary page ======================== */
+
+
+.customSelect {
+  display: block;
+}
+
+.navbarNav {
+  align-items: center;
+}
+
+.navbarNav .navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 15px !important;
+}
+
+.salary-table {
+  font-family: "Roboto", sans-serif !important;
+  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+  border-radius: 0;
+
+}
+
+.salary-Tmargin {
+  margin-bottom: 0;
+}
+
+.salary-transparent {
+  border-top: 1px solid #dee2e6;
+  background: transparent !important;
+}
+
+.salary-transparent td,
+th {
+  border-top: none;
+}
+
+.salary-text {
+  font-weight: normal;
+  color: #423f3e;
+  opacity: 0.9;
+}
+
+.salary-btn {
+  background: transparent !important;
+  border: none;
+  color: #423f3e;
+  opacity: 0.9;
+}
+
+.salary-btn:hover {
+  background: transparent !important;
+  border: none;
+  color: #423f3e;
+  opacity: 0.9;
+}
+
+.fal,
+.far {
+  font-family: "Font Awesome 5 Pro";
+}
+
+.fal {
+  font-weight: 300;
+}
+
+.card-formGroup {
+  height: 25%;
+}
+
+.salary-card {
+  padding: 10px;
+}
+
+.salary-card-secendary {
+  background: #f9f9f9 !important;
+  box-shadow: 0 0 10px rgb(0 0 0 / 13%), 0 0px 10px rgb(0 0 0 / 20%);
+  border-radius: 0;
+
+
+}
+
+.salary-card-title {
+  padding: 10px;
+  width: 100%;
+  font-size: 10px;
+  background: #787a91 !important;
+  color: #fff;
+  float: left;
+
+  margin-bottom: 25px;
+
+}
+
+.salary-card-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+
+}
+
+.salary-label {
+  font-weight: 500 !important;
+  color: #646464;
+}
+
+
+.salary-card-secendary .card-header {
+  background: #787a91 !important;
+  padding: 10px;
+}
+
+.salary-card-secendary:not(.card-outline)>.card-header {
+  background-color: #6c757d;
+}
+
+.salary-card-secendary .form-control {
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0px 7px #e2e2e2;
+}
+
+.salary-card-secendary .card-footer {
+  background: #f9f9f9 !important;
+  border: none;
+  padding-left: 0;
+}
+
+.salary-button {
+  padding: 7px;
+  border-radius: 0;
+  border: none;
+  background: #787a91 !important;
+  font-weight: 400 !important;
+}
+
+

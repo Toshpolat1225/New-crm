@@ -19,5 +19,5 @@ router.post("/remove",adminMan, SalaryController.removeSalary);
 router.get('/worker',adminManWor, SalaryController.getWorkerSalary)
 
 
-
+ 
 module.exports = router;
