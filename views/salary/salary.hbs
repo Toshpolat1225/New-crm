@@ -1,7 +1,7 @@
 {{#if salary.length}}
 <div class="row justify-content-center align-content-center">
-    <div class="col-10 table-responsive">
-        <table class="table table-striped text-center align-content-center justify-content-between">
+    <div class="col-12 table-responsive salary-table">
+        <table class="table table-striped text-center align-content-center justify-content-between salary-Tmargin">
             <thead>
                 <tr>
                     <th class="text-center pl-4 tr_num" style="width: 5%;">№</th>
@@ -9,45 +9,46 @@
                     <th class="tr_num" style="width: 15%;">Last wage</th>
                     <th class="tr_num" style="width: 15%;">Current wage</th>
                     <th class="tr_num" style="width: 15%;">Salary</th>
-                   {{#iftr isadmin ismanager}}
+                    {{#iftr isadmin ismanager}}
                     <th class="tr_num" style="width: 20%;">Edit</th>
                     {{/iftr}}
                 </tr>
             </thead>
             <tbody>
                 {{#each salary}}
-                <tr>
+                <tr class="salary-transparent">
 
                     <td>
                         <ul class="d-flex justify-content-center">
-                            <span class="numbers"></span>   
+                            <span class="numbers"></span>
                         </ul>
                     </td>
 
                     <td>
-                        <p class="name">{{name}}</p>
+                        <p class="name salary-text">{{name}}</p>
                     </td>
                     <td>
-                        <p class="data_old">{{dateOld}}</p>
+                        <p class="data_old salary-text">{{dateOld}}</p>
                     </td>
                     <td>
-                        <p class="data_new">{{date}}</p>
+                        <p class="data_new salary-text">{{date}}</p>
                     </td>
                     <td>
-                        <p class="price">{{price}}</p>
+                        <p class="price salary-text">{{price}}</p>
                     </td>
-                            {{#iftr @root.isadmin @root.ismanager}}
+                    {{#iftr @root.isadmin @root.ismanager}}
                     <td class="d-flex justify-content-center">
                         <div class="row justify-content-between">
-                            <a class="btn btn-primary btnEdit" href="/salary/{{id}}/edit?allow=true">edit</a>
+                            <a class="btn btn-primary btnEdit salary-btn" href="/salary/{{id}}/edit?allow=true"><i
+                                    class="fal fa-pencil-alt"></i></a>
                             <form style="width: auto;" action="/salary/remove" method="POST">
                                 <input type="hidden" name="_csrf" value="{{csrf}}" id="csrf" />
                                 <input type="hidden" value="{{id}}" name="id" id="id" />
-                                <button class="btn btn-danger btnEdit ml-3">delete</button>
-                         
+                                <button class="btn btn-danger btnEdit ml-3 salary-btn"><i class="fal fa-trash-alt "></i></button>
+
                             </form>
                     </td>
-                            {{/iftr}}
+                    {{/iftr}}
                 </tr>
                 {{/each}}
             </tbody>

@@ -22,7 +22,8 @@ const traineesRouter = require("./routes/trainees/trainees-projects");
 const lidsRouter = require("./routes/lids/lids");
 const salaryRouter = require("./routes/salary/salary");
 const priceRouter = require("./routes/price/price");
-const personRouter = require('./routes/person/person')
+const personRouter = require('./routes/person/person');
+const { options } = require("./routes/salary/salary");
 const store = new MongoDbStore({
   uri: MONGODB_URI,
   collection: "session",
@@ -36,8 +37,22 @@ const hbs = exhbs.create({
     allowProtoPropertiesByDefault: true,
     allowProtoMethodsByDefault: true,
   },
-  helpers: require("./helpers/Admin-manager"),
+  helpers: {
+    iftr: function(a, b, options){
+      if(a || b){
+        return options.fn(this)
+      } 
+      return options.inverse(this)
+    },
+    sel: function (a,b, options) {
+      if(a.toString() === b.toString() ){
+        // const text = a.toString() === b.toString()
+        return 'selected'
+      }
+      }
+  }, 
 });
+ 
 
 // hbs.registerHelper("getTime", function(){
 

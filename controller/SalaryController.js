@@ -65,9 +65,12 @@ module.exports.creatSalaryPost = async (req, res) => {
 };
 module.exports.editSalary = async (req, res) => {
   const salary = await Salary.findById(req.params.id);
+  const workers = await Worker.find()
+  const worker =  workers.find(c=> c._id.toString() === salary.userId.toString())
   res.render("salary/salary-edit", {
     title: `edit salary page`,
     salary,
+    workers
   });
 };
  
