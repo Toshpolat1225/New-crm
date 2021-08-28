@@ -1,17 +1,29 @@
-<div class="row justify-content-center m-0">
+<div class="row justify-content-center m-0 createCard">
   <div class="col-md-6">
     <!-- jquery validation -->
     <div class="card card-primary" style="border-radius: 0;">
       <!-- /.card-header -->
       <!-- form start -->
       <form action="/price/addPrice/add" method="POST">
+        <div class="card-header cardHeader">
+          <h3 style="margin-bottom: 0; color: #fff; font-weight: 500;">Add
+            content price</h3>
+        </div>
         <div class="card-body">
           <div class="form-group">
             <label>Text</label>
-            <a type="button" class="btn btn-primary enter_inp"><svg stroke="currentColor" fill="currentColor"
-                stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <a type="button" class="btn btn-primary enter_inp"><svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 0 0 0 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z">
+                  d="M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 0 0 0 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z"
+                >
                 </path>
               </svg></a>
             <div class="text_box d-flex flex-column">
@@ -22,17 +34,35 @@
           </div>
           <div class="form-group">
             <label for="info">Name</label>
-            <input type="text" name="name" class="form-control formControl" id="name" placeholder="name" required />
+            <input
+              type="text"
+              name="name"
+              class="form-control formControl"
+              id="name"
+              placeholder="name"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" name="price" class="form-control formControl" id="price" placeholder="Price" min="1"
-              required />
+            <input
+              type="number"
+              name="price"
+              class="form-control formControl"
+              id="price"
+              placeholder="Price"
+              min="1"
+              required
+            />
           </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="card-footer" style="background: #f9f9f9;">
+          <button
+            style="padding: 10px 35px;"
+            type="submit"
+            class="btn btn-primary createBtn"
+          >Submit</button>
         </div>
       </form>
     </div>
@@ -42,22 +72,12 @@
 
 <script>
 
-  addInput()
-  function addInput() {
-    let top = 51
-    const $btnenter = document.querySelector('.enter_inp');
-    const $box = document.querySelector('.text_box');
-    $btnenter.addEventListener('click', () => {
-      const div = document.createElement('div')
-      div.classList.add('box_input')
-      const inp = `
-            <input type="text" name="info" class="inp_text" />
-        `
-      div.innerHTML = inp
-      top += 26.3
-      $btnenter.style.top = `${top}px`
-      $box.appendChild(div)
-    })
-  }
+  addInput(); function addInput() { let top = 109.5; const $btnenter =
+  document.querySelector('.enter_inp'); const $box =
+  document.querySelector('.text_box'); $btnenter.addEventListener('click', () =>
+  { const div = document.createElement('div'); div.classList.add('box_input');
+  const inp = ` <input type="text" name="info" class="inp_text" /> `;
+  div.innerHTML = inp; top += 26.3; $btnenter.style.top = `${top}px`;
+  $box.appendChild(div); }); }
 
 </script>
