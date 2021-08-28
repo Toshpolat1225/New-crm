@@ -2,12 +2,11 @@ const { Router } = require("express");
 const router = Router();
 const Project = require("../../models/traineesProject");
 const Workers = require("../../models/workers");
-const rootUser = require('../../middleware/rootUser')
-const adminManWor =require('../../middleware/adminManWor')
-const adminMan = require('../../middleware/adminManager')
+const rootUser = require("../../middleware/rootUser");
+const adminManWor = require("../../middleware/adminManWor");
+const adminMan = require("../../middleware/adminManager");
 
-
-router.get("/add/worker",adminMan, async (req, res) => {
+router.get("/add/worker", adminMan, async (req, res) => {
   const workers = await Workers.find();
   res.status(200).json(workers);
 });
@@ -34,19 +33,20 @@ router.get("/", async (req, res) => {
   res.render("trainees/projects", {
     title: "Trainees projects",
     projects,
+    isTrainee: true,
   });
 });
 
-router.get("/add",adminMan, async (req, res) => {
+router.get("/add", adminMan, async (req, res) => {
   const workers = await Workers.find();
   res.render("trainees/projects-add", {
     title: "Add trainees project",
     workers,
-    isTrainee: true
+    isTrainee: true,
   });
 });
 
-router.post("/add",adminMan, async (req, res) => {
+router.post("/add", adminMan, async (req, res) => {
   let status;
   if (req.body.status === "On progress") {
     status = {
@@ -84,18 +84,12 @@ router.post("/add",adminMan, async (req, res) => {
   if (!(workers instanceof Array)) {
     workers = [workers];
   }
-  if (workers ) {
-    const newWork = workers.map((c) => {
-        return {
-          worker: c,
-        };
-    });
-    let k = -1;
-    works = newWork.map((g) => {
-      k++;
-      return g[k];
+  if (workers) {
+    works = workers.map((c) => {
+      return { worker: c };
     });
   }
+  console.log(works);
   let date_t = new Date(deadline);
   let date_l = new Date(date);
   let dateTime = new Date();
@@ -125,16 +119,15 @@ router.post("/add",adminMan, async (req, res) => {
 router.get("/view/:id", async (req, res) => {
   const project = await Project.findById(req.params.id);
   await project.populate("works.worker").execPopulate();
-  
+
   res.render("trainees/projects-view", {
     title: `view ${project.name}`,
     project,
-    isView: true
-
+    isView: true,
   });
 });
 
-router.get("/edit/:id",adminMan, async (req, res) => {
+router.get("/edit/:id", adminMan, async (req, res) => {
   const project = await Project.findById(req.params.id);
   const workers = await Workers.find();
   await project.populate("works.worker").execPopulate();
@@ -142,10 +135,11 @@ router.get("/edit/:id",adminMan, async (req, res) => {
     title: `edit ${project.name}`,
     workers,
     project,
+    isTrainee: true,
   });
 });
 
-router.post("/edit/:id",adminMan, async (req, res) => {
+router.post("/edit/:id", adminMan, async (req, res) => {
   const project = await Project.findById(req.body.id);
   let status;
   if (req.body.status === "On progress") {
@@ -178,27 +172,14 @@ router.post("/edit/:id",adminMan, async (req, res) => {
     telegram,
     totalPayment,
     workers,
-    workerPayment,
   } = req.body;
   let works;
-
   if (!(workers instanceof Array)) {
     workers = [workers];
-    workerPayment = [workerPayment];
   }
-  if (workers && workerPayment) {
-    const newWork = workers.map((c) => {
-      return workerPayment.map((o) => {
-        return {
-          worker: c,
-          payment: o,
-        };
-      });
-    });
-    let k = -1;
-    works = newWork.map((g) => {
-      k++;
-      return g[k];
+  if (workers) {
+    works = workers.map((c) => {
+      return { worker: c };
     });
   }
   const newProject = {
@@ -220,7 +201,7 @@ router.post("/edit/:id",adminMan, async (req, res) => {
   res.redirect("/trainees");
 });
 
-router.get("/delete/:id",adminMan, async (req, res) => {
+router.get("/delete/:id", adminMan, async (req, res) => {
   await Project.findByIdAndDelete(req.params.id);
   res.redirect("/trainees");
 });
